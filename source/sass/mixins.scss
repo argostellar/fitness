@@ -1,0 +1,85 @@
+@mixin roboto-condensed-font {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+}
+
+@mixin bebas-neue-font {
+  font-family: "Bebas Neue", "Arial Black", sans-serif;
+}
+
+@mixin page-main-font {
+  @include roboto-condensed-font;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 22px;
+}
+
+@mixin clear-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin reset-space {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin mobile-space {
+  margin: 0 15px;
+}
+
+@mixin tablet-space {
+  margin: 0 30px;
+}
+
+@mixin desktop-space {
+  margin: 0 110px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1440px;
+}
+
+@mixin desktop-container {
+  width: $desktop-width;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@mixin tablet-container {
+  width: auto;
+  margin: 0 25px;
+  padding: 0;
+}
+
+@mixin active-states {
+  &:hover,
+  &:focus {
+    color: $blue;
+    border-color: $blue;
+    fill: $blue;
+  }
+
+  &:active {
+    color: rgba($blue, 0.4);
+    border-color: rgba($blue, 0.4);
+    fill: rgba($blue, 0.4);
+  }
+}
+
+@mixin empty-rule {
+  hyphens: auto;
+}
+
+@mixin redline {
+  outline: 1px solid red;
+}
