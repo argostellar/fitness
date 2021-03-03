@@ -1,0 +1,15 @@
+.main {
+  @include container;
+}
+
+@media (max-width: $tablet-width-only) {
+  .main {
+    @include container;
+  }
+}
+
+@media (max-width: $mobile-width-only) {
+  .main {
+    @include container;
+  }
+}

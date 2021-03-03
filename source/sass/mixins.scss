@@ -49,13 +49,23 @@
   max-width: 1440px;
 }
 
-@mixin desktop-container {
-  width: $desktop-width;
+@mixin container {
   margin: 0 auto;
-  padding: 0 20px;
+}
+
+@mixin desktop-container {
+  padding: 0 $desktop-gap;
 }
 
 @mixin tablet-container {
+  padding: 0 $tablet-gap;
+}
+
+@mixin mobile-container {
+  padding: 0 $mobile-gap;
+}
+
+@mixin old-tablet-container {
   width: auto;
   margin: 0 25px;
   padding: 0;
@@ -64,15 +74,19 @@
 @mixin active-states {
   &:hover,
   &:focus {
-    color: $blue;
-    border-color: $blue;
-    fill: $blue;
+    color: $black;
+    border-color: $black;
+    fill: $black;
   }
 
   &:active {
-    color: rgba($blue, 0.4);
-    border-color: rgba($blue, 0.4);
-    fill: rgba($blue, 0.4);
+    color: $white;
+    text-shadow: -1px 1px 0 $black,
+      1px 1px 0 $black,
+      1px -1px 0 $black,
+      -1px -1px 0 $black;
+    border-color: $white;
+    fill: $white;
   }
 }
 
@@ -82,4 +96,12 @@
 
 @mixin redline {
   outline: 1px solid red;
+}
+
+@mixin blackline {
+  outline: 1px solid black;
+}
+
+@mixin ultraline {
+  outline: 2px dotted darkgrey;
 }

@@ -38,3 +38,13 @@
     url("../fonts/bebasneueregular.woff") format("woff");
 }
 
+@font-face {
+  font-family: "Bebas Neue";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: local("Bebas Neue"),
+    url("../fonts/bebasneuebold.woff2") format("woff2"),
+    url("../fonts/bebasneuebold.woff") format("woff");
+}
+
