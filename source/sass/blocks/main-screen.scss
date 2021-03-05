@@ -15,12 +15,6 @@
   min-height: 658px;
 }
 
-@supports (background-image: conic-gradient()) {
-  .main-screen {
-    background-image: conic-gradient(from 130.31deg at 16.03% 39.06%, $bg-gradient-color-1 -46.69deg, $bg-gradient-color-2 32.24deg, $bg-gradient-color-1 313.31deg, $bg-gradient-color-2 392.24deg);
-  }
-}
-
 .main-screen__upper-wrapper {
   @include flex-row;
   justify-content: space-between;
@@ -189,12 +183,6 @@
     min-height: 554px;
   }
 
-  @supports (background-image: conic-gradient()) {
-    .main-screen {
-      background-image: conic-gradient(from 139.4deg at 20.7% 35.74%, $bg-gradient-color-1 -46.69deg, $bg-gradient-color-2 32.24deg, $bg-gradient-color-1 313.31deg, $bg-gradient-color-2 392.24deg);
-    }
-  }
-
   .main-screen__upper-wrapper {
     padding-top: 39px;
     padding-left: 20px;
@@ -285,12 +273,6 @@
     min-height: 491px;
   }
 
-  @supports (background-image: conic-gradient()) {
-    .main-screen {
-      background-image: conic-gradient(from 171.43deg at 35.31% 34.22%, $bg-gradient-color-1 -46.69deg, $bg-gradient-color-2 32.24deg, $bg-gradient-color-1 313.31deg, $bg-gradient-color-2 392.24deg);
-    }
-  }
-
   .main-screen__upper-wrapper {
     padding: 0;
     padding-top: 19px;
@@ -348,5 +330,41 @@
     padding-bottom: 20px;
     padding-left: 34px;
     padding-right: 34px;
+  }
+}
+
+@supports (background-image: conic-gradient(red, orange, yellow, green, blue)) {
+  .main-screen {
+    background-image: conic-gradient(from 130.31deg at 16.03% 39.06%, $bg-gradient-color-1 -46.69deg, $bg-gradient-color-2 32.24deg, $bg-gradient-color-1 313.31deg, $bg-gradient-color-2 392.24deg);
+    background-size: auto auto;
+  }
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: conic-gradient(from 130.31deg at 16.03% 39.06%, $bg-gradient-color-1 -46.69deg, $bg-gradient-color-2 32.24deg, $bg-gradient-color-1 313.31deg, $bg-gradient-color-2 392.24deg);
+    background-size: auto auto;
+  }
+}
+
+@supports (background-image: conic-gradient(red, orange, yellow, green, blue)) and (max-width: $tablet-width-only) {
+  .main-screen {
+    background-image: conic-gradient(from 139.4deg at 20.7% 35.74%, $bg-gradient-color-1 -46.69deg, $bg-gradient-color-2 32.24deg, $bg-gradient-color-1 313.31deg, $bg-gradient-color-2 392.24deg);
+    background-size: auto auto;
+  }
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: conic-gradient(from 139.4deg at 20.7% 35.74%, $bg-gradient-color-1 -46.69deg, $bg-gradient-color-2 32.24deg, $bg-gradient-color-1 313.31deg, $bg-gradient-color-2 392.24deg);
+    background-size: auto auto;
+  }
+}
+
+@supports (background-image: conic-gradient(red, orange, yellow, green, blue)) and (max-width: $mobile-width-only) {
+  .main-screen {
+    background-image: conic-gradient(from 171.43deg at 35.31% 34.22%, $bg-gradient-color-1 -46.69deg, $bg-gradient-color-2 32.24deg, $bg-gradient-color-1 313.31deg, $bg-gradient-color-2 392.24deg);
+    background-size: auto auto;
+  }
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: conic-gradient(from 171.43deg at 35.31% 34.22%, $bg-gradient-color-1 -46.69deg, $bg-gradient-color-2 32.24deg, $bg-gradient-color-1 313.31deg, $bg-gradient-color-2 392.24deg);
+    background-size: auto auto;
   }
 }
