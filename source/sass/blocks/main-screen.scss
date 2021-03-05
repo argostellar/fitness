@@ -1,16 +1,11 @@
 .main-screen {
   @include desktop-container;
-  background-image: url("../../img/desktop-bg-main@1x.png");
+  background-image: conic-gradient(from 130.31deg at 16.03% 39.06%, $bg-gradient-color-1 -46.69deg, $bg-gradient-color-2 32.24deg, $bg-gradient-color-1 313.31deg, $bg-gradient-color-2 392.24deg);
   background-size: auto;
   background-position: 0 0;
   background-repeat: repeat no-repeat;
 
   color: $white;
-
-  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../../img/desktop-bg-main@2x.png");
-    background-size: 1366px auto;
-  }
 
   min-height: 658px;
 }
@@ -170,15 +165,10 @@
 @media (max-width: $tablet-width-only) {
   .main-screen {
     @include tablet-container;
-    background-image: url("../../img/tablet-bg-main@1x.png");
+    background-image: conic-gradient(from 139.4deg at 20.7% 35.74%, $bg-gradient-color-1 -46.69deg, $bg-gradient-color-2 32.24deg, $bg-gradient-color-1 313.31deg, $bg-gradient-color-2 392.24deg);
     background-size: auto;
     background-position: 0 0;
     background-repeat: repeat no-repeat;
-
-    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../../img/tablet-bg-main@2x.png");
-      background-size: 768px auto;
-    }
 
     min-height: 554px;
   }
@@ -260,15 +250,10 @@
 @media (max-width: $mobile-width-only) {
   .main-screen {
     @include mobile-container;
-    background-image: url("../../img/mobile-bg-main@1x.png");
+    background-image: conic-gradient(from 171.43deg at 35.31% 34.22%, $bg-gradient-color-1 -46.69deg, $bg-gradient-color-2 32.24deg, $bg-gradient-color-1 313.31deg, $bg-gradient-color-2 392.24deg);
     background-size: auto;
     background-position: 0 0;
     background-repeat: repeat no-repeat;
-
-    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../../img/mobile-bg-main@2x.png");
-      background-size: 320px auto;
-    }
 
     min-height: 491px;
   }
@@ -330,41 +315,5 @@
     padding-bottom: 20px;
     padding-left: 34px;
     padding-right: 34px;
-  }
-}
-
-@supports (background-image: conic-gradient(red, orange, yellow, green, blue)) {
-  .main-screen {
-    background-image: conic-gradient(from 130.31deg at 16.03% 39.06%, $bg-gradient-color-1 -46.69deg, $bg-gradient-color-2 32.24deg, $bg-gradient-color-1 313.31deg, $bg-gradient-color-2 392.24deg);
-    background-size: auto auto;
-  }
-
-  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: conic-gradient(from 130.31deg at 16.03% 39.06%, $bg-gradient-color-1 -46.69deg, $bg-gradient-color-2 32.24deg, $bg-gradient-color-1 313.31deg, $bg-gradient-color-2 392.24deg);
-    background-size: auto auto;
-  }
-}
-
-@supports (background-image: conic-gradient(red, orange, yellow, green, blue)) and (max-width: $tablet-width-only) {
-  .main-screen {
-    background-image: conic-gradient(from 139.4deg at 20.7% 35.74%, $bg-gradient-color-1 -46.69deg, $bg-gradient-color-2 32.24deg, $bg-gradient-color-1 313.31deg, $bg-gradient-color-2 392.24deg);
-    background-size: auto auto;
-  }
-
-  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: conic-gradient(from 139.4deg at 20.7% 35.74%, $bg-gradient-color-1 -46.69deg, $bg-gradient-color-2 32.24deg, $bg-gradient-color-1 313.31deg, $bg-gradient-color-2 392.24deg);
-    background-size: auto auto;
-  }
-}
-
-@supports (background-image: conic-gradient(red, orange, yellow, green, blue)) and (max-width: $mobile-width-only) {
-  .main-screen {
-    background-image: conic-gradient(from 171.43deg at 35.31% 34.22%, $bg-gradient-color-1 -46.69deg, $bg-gradient-color-2 32.24deg, $bg-gradient-color-1 313.31deg, $bg-gradient-color-2 392.24deg);
-    background-size: auto auto;
-  }
-
-  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: conic-gradient(from 171.43deg at 35.31% 34.22%, $bg-gradient-color-1 -46.69deg, $bg-gradient-color-2 32.24deg, $bg-gradient-color-1 313.31deg, $bg-gradient-color-2 392.24deg);
-    background-size: auto auto;
   }
 }
