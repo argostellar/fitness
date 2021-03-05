@@ -125,6 +125,8 @@
   align-items: center;
   margin-top: auto;
   margin-bottom: 35px;
+
+  z-index: 2;
 }
 
 .membership__price-wrapper p {
@@ -135,6 +137,8 @@
 
   color: $price-color;
   margin-right: 15px;
+
+  z-index: 1;
 
   position: relative;
 
@@ -153,7 +157,13 @@
     color: $price-fade-color;
 
     opacity: 0.48;
+
+    z-index: -1;
   }
+}
+
+.membership__price-wrapper svg {
+  z-index: 1;
 }
 
 .membership__link {
