@@ -10,6 +10,9 @@
 </head>
 
 <body>
+  <div style="display:none">
+    <include src="build/img/sprite_auto.svg"></include>
+  </div>
   <main class="main">
     <section class="main-screen">
       <div class="main-screen__upper-wrapper">
@@ -33,7 +36,7 @@
               </li>
             </ul>
           </div>
-          <a class="main-screen__btn" href="#season-tickets">Купить абонемент</a>
+          <a class="main-screen__btn" href="#membership">Купить абонемент</a>
         </div>
         <div class="main-screen__img-wrapper">
           <picture>
@@ -87,6 +90,70 @@
             <span class="visually-hidden">Запуск видео</span>
           </button>
         </div>
+      </div>
+    </section>
+    <section class="membership" id="membership">
+      <h3>Абонементы</h3>
+      <div class="membership__duration-wrapper">
+        <form class="membership__duration-form">
+          <ul class="membership__duration-list">
+            <li class="membership__duration-item">
+              <input type="radio" name="duration" id="1month" value="1" checked>
+              <label for="1month" tabindex="0">1 месяц</label>
+            </li>
+            <li class="membership__duration-item">
+              <input type="radio" name="duration" id="6months" value="6">
+              <label for="6months" tabindex="0">6 месяцев</label>
+            </li>
+            <li class="membership__duration-item">
+              <input type="radio" name="duration" id="12months" value="12">
+              <label for="12months" tabindex="0">12 месяцев</label>
+            </li>
+          </ul>
+        </form>
+      </div>
+      <ul class="membership__list">
+        <li class="membership__item">
+          <h4>С тренером</h4>
+          <span>12 занятий</span>
+          <div class="membership__price-wrapper">
+            <p data-price="5000">5000 </p>
+            <svg class="membership__price-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="42">
+              <use xlink:href="#icon-ruble"></use>
+            </svg>
+          </div>
+          <a class="membership__link" href="#potential-page">Купить абонемент</a>
+        </li>
+        <li class="membership__item">
+          <h4>Дневной</h4>
+          <span>с 8:00 до 17:00</span>
+          <div class="membership__price-wrapper">
+            <p data-price="1700">1700 </p>
+            <svg class="membership__price-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="42">
+              <use xlink:href="#icon-ruble"></use>
+            </svg>
+          </div>
+          <a class="membership__link" href="#potential-page">Купить абонемент</a>
+        </li>
+        <li class="membership__item">
+          <h4>Полный день</h4>
+          <span>с 8:00 до 22:00</span>
+          <div class="membership__price-wrapper">
+            <p data-price="2700">2700 </p>
+            <svg class="membership__price-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="42">
+              <use xlink:href="#icon-ruble"></use>
+            </svg>
+          </div>
+          <a class="membership__link" href="#potential-page">Купить абонемент</a>
+        </li>
+      </ul>
+      <div class="membership__img-wrapper">
+        <picture>
+          <!-- 1х: 287px; 2x: 574px -->
+          <source type="image/webp" srcset="img/tablet-bg-iron@1x@1x.webp 1x, img/tablet-bg-iron@2x.webp 2x">
+          <!-- 1х: 287px; 2x: 574px -->
+          <img src="img/tablet-bg-iron@1x.png" srcset="img/tablet-bg-iron@2x@2x.png 2x" width="347" height="444" alt="Изображение железных блинов">
+        </picture>
       </div>
     </section>
   </main>
