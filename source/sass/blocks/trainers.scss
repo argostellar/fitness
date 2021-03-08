@@ -1,0 +1,300 @@
+.trainers {
+  @include flex-column;
+  align-items: center;
+  margin-bottom: 119px;
+}
+
+.trainers h3 {
+  @include reset-space;
+  @include bebas-neue-font;
+  font-size: 49px;
+  line-height: 49px;
+  letter-spacing: 0.03em;
+
+  align-self: flex-start;
+
+  margin-bottom: 51px;
+  margin-left: calc(((100vw - 1366px) / 2) + 105px);
+}
+
+.trainers__wrapper {
+  @include flex-row;
+  margin-left: 17px;
+}
+
+
+.trainers__button {
+  border: none;
+  min-width: 16px;
+  min-height: 32px;
+
+  align-self: center;
+
+  background-color: transparent;
+
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+
+    top: 4px;
+
+    width: 23px;
+    height: 23px;
+
+    transform: rotate(45deg);
+
+    border: 1px solid $arrow-color;
+  }
+
+  --hmargin: 40px;
+
+  &--prev {
+    margin-right: var(--hmargin);
+
+    &::before {
+      left: 4px;
+      border-top: none;
+      border-right: none;
+    }
+  }
+
+  &--next {
+    margin-left: var(--hmargin);
+
+    &::before {
+      left: -11px;
+      border-bottom: none;
+      border-left: none;
+    }
+  }
+}
+
+.trainers__button:hover,
+.trainers__button:focus {
+  &::before {
+    border-color: $text-color;
+  }
+}
+
+.trainers__list {
+  @include clear-list;
+  @include flex-row;
+}
+
+.trainers__item {
+  width: 260px;
+  height: 294px;
+
+  background-color: $text-color;
+  color: $white;
+
+  margin-right: 40px;
+
+  position: relative;
+}
+
+.trainers__item h4 {
+  @include reset-space;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 27px;
+
+  align-self: center;
+  text-align: center;
+
+  min-width: 146px;
+
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 1;
+}
+
+.trainers__item img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.trainers__info-wrapper {
+  @include flex-column;
+  align-items: center;
+  background-color: rgba($text-color, 0.89);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 260px;
+  height: 294px;
+
+  z-index: -1;
+}
+
+.trainers__info-wrapper > span {
+  color: $trainer-subtext;
+  font-size: 16px;
+  line-height: 24px;
+
+  margin-top: 75px;
+  margin-bottom: 32px;
+}
+
+.trainers__info-list {
+  @include reset-space;
+  list-style: disc;
+  align-self: flex-start;
+  margin-left: 72px;
+}
+
+.trainers__info-item {
+  margin-bottom: 12px;
+  max-width: 143px;
+}
+
+.trainers__info-item span {
+  font-size: 14px;
+  line-height: 21px;
+  margin-left: -1px;
+}
+
+.trainers__item:hover {
+  box-shadow: 0 0 35px $slider-shadow;
+}
+
+.trainers__item:hover h4 {
+  top: 52px;
+  z-index: 3;
+}
+
+.trainers__item:hover .trainers__info-wrapper {
+  z-index: 2;
+}
+
+
+@media (min-width: $desktop-width-only) {
+  .trainers__item:nth-child(n + 5) {
+    display: none;
+  }
+
+  .trainers__item:nth-child(n + 4) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: $tablet-width-only) {
+  .trainers {
+    margin-bottom: 119px;
+  }
+
+  .trainers h3 {
+    font-size: 42px;
+    line-height: 42px;
+
+    align-self: center;
+
+    margin-bottom: 40px;
+    margin-left: 17px;
+  }
+
+  .trainers__item {
+    width: 268px;
+    margin-right: 30px;
+    overflow: hidden;
+  }
+
+  .trainers__item img {
+    width: 268px;
+  }
+
+  .trainers__item:nth-child(n + 3) {
+    display: none;
+  }
+
+  .trainers__item:nth-child(n + 2) {
+    margin-right: 0;
+  }
+
+  .trainers__info-wrapper {
+    width: 268px;
+  }
+}
+
+@media (max-width: $mobile-width-only) {
+  .trainers h3 {
+    font-size: 32px;
+    line-height: 32px;
+
+    margin-bottom: 42px;
+    margin-left: 0;
+  }
+
+  .trainers__wrapper {
+    margin-left: 0;
+  }
+
+  .trainers__list {
+    justify-content: center;
+  }
+
+  .trainers__item {
+    width: 226px;
+    height: 274px;
+    margin-right: 0;
+    overflow: hidden;
+  }
+
+  .trainers__item img {
+    width: 226px;
+    height: 274px;
+  }
+
+  .trainers__item:nth-child(n + 2) {
+    display: none;
+  }
+
+  .trainers__item:nth-child(n + 1) {
+    margin-right: 0;
+  }
+
+  .trainers__button {
+    min-width: 10px;
+    min-height: 19px;
+
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+
+      top: 3px;
+
+      width: 14px;
+      height: 14px;
+
+      transform: rotate(45deg);
+    }
+
+    --hmargin: 22px;
+
+    &--prev {
+      margin-right: var(--hmargin);
+
+      &::before {
+        left: 5px;
+      }
+    }
+
+    &--next {
+      margin-left: var(--hmargin);
+
+      &::before {
+        left: -7px;
+      }
+    }
+  }
+}
