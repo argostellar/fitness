@@ -1,7 +1,7 @@
 .trainers {
   @include flex-column;
   align-items: center;
-  margin-bottom: 119px;
+  margin-bottom: 120px;
 }
 
 .trainers h3 {
@@ -188,7 +188,7 @@
 
 @media (max-width: $tablet-width-only) {
   .trainers {
-    margin-bottom: 119px;
+    margin-bottom: 100px;
   }
 
   .trainers h3 {
@@ -225,6 +225,10 @@
 }
 
 @media (max-width: $mobile-width-only) {
+  .trainers {
+    margin-bottom: 70px;
+  }
+
   .trainers h3 {
     font-size: 32px;
     line-height: 32px;
