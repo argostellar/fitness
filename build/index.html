@@ -104,7 +104,7 @@
             <!-- 1х: 364px; 2x: 728px -->
             <img src="img/desktop-gym-video@1x.png" srcset="img/desktop-gym-video@2x.png 2x" width="364" height="228" alt="Изображение предпросмотра видеодемонстрации тренажёрного зала">
           </picture>
-          <button class="gym__video-btn">
+          <button class="gym__video-btn" type="button">
             <span class="visually-hidden">Запуск видео</span>
           </button>
         </div>
@@ -212,7 +212,7 @@
     <section class="trainers">
       <h3>Тренеры</h3>
       <div class="trainers__wrapper">
-        <button class="trainers__button trainers__button--prev">
+        <button class="trainers__button trainers__button--prev" type="button">
           <span class="visually-hidden">Предыдущие</span>
         </button>
         <ul class="trainers__list">
@@ -385,7 +385,7 @@
             </div>
           </li>
         </ul>
-        <button class="trainers__button trainers__button--next">
+        <button class="trainers__button trainers__button--next" type="button">
           <span class="visually-hidden">Следующие</span>
         </button>
       </div>
@@ -454,11 +454,11 @@
           </div>
           <div class="promotions__img-wrapper">
             <picture>
-            <!-- 1х: 399px; 2x: 798px -->
-            <source type="image/webp" srcset="img/tablet-promo@1x.webp 1x, img/tablet-promo@2x.webp 2x">
-            <!-- 1х: 399px; 2x: 798px -->
-            <img src="img/tablet-promo@1x.png" srcset="img/tablet-promo@2x.png 2x" width="399" height="462" alt="Изображение спортивной девушки">
-          </picture>
+              <!-- 1х: 399px; 2x: 798px -->
+              <source type="image/webp" srcset="img/tablet-promo@1x.webp 1x, img/tablet-promo@2x.webp 2x">
+              <!-- 1х: 399px; 2x: 798px -->
+              <img src="img/tablet-promo@1x.png" srcset="img/tablet-promo@2x.png 2x" width="399" height="462" alt="Изображение спортивной девушки">
+            </picture>
           </div>
         </div>
         <ul class="promotions__minor-promo-list">
@@ -469,10 +469,51 @@
           </li>
           <li class="promotions__minor-promo-item">
             <h4>Скидка 20%</h4>
-            <p>Корпоративный фитнес  с командой</p>
+            <p>Корпоративный фитнес с командой</p>
             <a href="" class="promotions__link">подробнее</a>
           </li>
         </ul>
+      </div>
+    </section>
+    <section class="reviews">
+      <h3>Отзывы</h3>
+      <div class="reviews__wrapper">
+        <button class="reviews__btn reviews__btn--prev" type="button">
+          <span class="visually-hidden">Предыдущий</span>
+        </button>
+        <ul class="reviews__list">
+          <li class="reviews__item">
+            <div class="reviews__img-wrapper">
+              <picture>
+                <!-- 1х: 80px; 2x: 160px -->
+                <source type="image/webp" srcset="img/desktop-feedback-icon@1x.webp 1x, img/desktop-feedback-icon@2x.webp 2x">
+                <!-- 1х: 80px; 2x: 160px -->
+                <img src="img/desktop-feedback-icon@1x.png" srcset="img/desktop-feedback-icon@2x.png 2x" width="80" height="80" alt="Изображение автора отзыва">
+              </picture>
+            </div>
+            <div class="reviews__text-wrapper">
+              <h4>Анна Орлова</h4>
+              <p>«Хожу в SuperClub уже больше года. Нравится, что в клубе всегда чисто, тренажеры обновляют, персонал дружелюбный. Зал просторный, даже в вечернее время нет очередей»</p>
+            </div>
+          </li>
+          <li class="reviews__item">
+            <div class="reviews__img-wrapper">
+              <picture>
+                <!-- 1х: 80px; 2x: 160px -->
+                <source type="image/webp" srcset="img/desktop-feedback-icon@1x.webp 1x, img/desktop-feedback-icon@2x.webp 2x">
+                <!-- 1х: 80px; 2x: 160px -->
+                <img src="img/desktop-feedback-icon@1x.png" srcset="img/desktop-feedback-icon@2x.png 2x" width="80" height="80" alt="Изображение автора отзыва">
+              </picture>
+            </div>
+            <div class="reviews__text-wrapper">
+              <h4>Анна Орлова</h4>
+              <p>«Хожу в SuperClub уже больше года. Нравится, что в клубе всегда чисто, тренажеры обновляют, персонал дружелюбный. Зал просторный, даже в вечернее время нет очередей»</p>
+            </div>
+          </li>
+        </ul>
+        <button class="reviews__btn reviews__btn--next" type="button">
+          <span class="visually-hidden">Следующий</span>
+        </button>
       </div>
     </section>
   </main>
