@@ -1,0 +1,18 @@
+.callback-contacts {
+  @include flex-row;
+  margin-top: 120px;
+  min-height: 337px;
+}
+
+@media (max-width: $tablet-width-only) {
+  .callback-contacts {
+    @include flex-column;
+    margin-top: 100px;
+  }
+}
+
+@media (max-width: $mobile-width-only) {
+  .callback-contacts {
+    margin-top: 70px;
+  }
+}

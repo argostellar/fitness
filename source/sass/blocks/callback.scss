@@ -1,0 +1,184 @@
+.callback {
+  @include flex-column;
+  color: $white;
+  background-color: $text-color;
+  min-width: 683px;
+  width: 50%;
+}
+
+.callback h3 {
+  @include reset-space;
+  @include bebas-neue-font;
+  font-size: 49px;
+  line-height: 64px;
+  letter-spacing: 0.03em;
+  text-transform: lowercase;
+
+  margin-right: 213px;
+  margin-left: auto;
+  margin-top: 62px;
+}
+
+.callback__form {
+  @include flex-column;
+  max-width: 410px;
+  margin-left: auto;
+  margin-right: 170px;
+}
+
+.callback__input-wrapper {
+  @include flex-row;
+  justify-content: space-between;
+  margin-top: 32px;
+  margin-bottom: 29px;
+}
+
+.callback__name-wrapper label,
+.callback__phone-wrapper label {
+  display: none;
+}
+
+.callback__name-wrapper input,
+.callback__phone-wrapper input {
+  width: 190px;
+  background-color: transparent;
+  color: $white;
+
+  @include roboto-condensed-font;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+
+  border: none;
+  border-bottom: 1px solid $contacts-border-color;
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.callback__name-wrapper input::placeholder,
+.callback__phone-wrapper input::placeholder {
+  color: $white;
+}
+
+.callback__name-wrapper input:hover,
+.callback__phone-wrapper input:hover {
+  border: none;
+  border-bottom: 1px solid $white;
+}
+
+.callback__name-wrapper input:focus,
+.callback__phone-wrapper input:focus {
+  border: none;
+  border-bottom: 1px solid $white;
+  background-color: rgba($white, 0.3);
+}
+
+.callback__btn {
+  background-color: transparent;
+
+  @include roboto-condensed-font;
+  color: $white;
+  text-transform: uppercase;
+  text-align: center;
+
+  border: 3px solid $white;
+
+  min-width: 410px;
+  min-height: 52px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+
+  padding-top: 18px;
+  padding-bottom: 14px;
+
+  &:hover,
+  &:focus {
+    color: $text-color;
+    background-color: $white;
+  }
+}
+
+@media (max-width: $tablet-width-only) {
+  .callback {
+    min-width: 768px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .callback h3 {
+    align-self: flex-start;
+
+    font-size: 42px;
+    line-height: 42px;
+
+    margin-top: 70px;
+    margin-right: 0;
+    margin-left: calc(((100vw - 768px) / 2) + 133px);
+  }
+
+  .callback__form {
+    min-width: 472px;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 31px;
+    margin-bottom: 70px;
+  }
+
+  .callback__input-wrapper {
+    margin-top: 34px;
+    margin-bottom: 27px;
+  }
+
+  .callback__name-wrapper input,
+  .callback__phone-wrapper input {
+    width: 206px;
+  }
+}
+
+@media (max-width: $mobile-width-only) {
+  .callback {
+    min-width: 290px;
+    width: 100%;
+  }
+
+  .callback h3 {
+    font-size: 32px;
+    line-height: 32px;
+
+    margin-bottom: 36px;
+    margin-left: calc(((100vw - 320px) / 2) + 15px);
+  }
+
+  .callback__form {
+    min-width: 290px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 69px;
+  }
+
+  .callback__input-wrapper {
+    @include flex-column;
+    margin-top: 0;
+    margin-bottom: 38px;
+
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .callback__name-wrapper {
+    margin-bottom: 33px;
+  }
+
+  .callback__name-wrapper input,
+  .callback__phone-wrapper input {
+    width: 290px;
+  }
+
+  .callback__btn {
+    min-width: 290px;
+  }
+}
