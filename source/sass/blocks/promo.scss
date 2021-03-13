@@ -113,7 +113,6 @@
 }
 
 .promo__link {
-  @include active-states;
   color: $white;
   font-weight: 700;
   font-size: 12px;
@@ -134,6 +133,12 @@
 
   margin-top: auto;
   margin-bottom: 0;
+}
+
+.promo__link:hover,
+.promo__link:focus {
+  background-color: $white;
+  color: $highlight-red-color;
 }
 
 .promo__img-wrapper {

@@ -1,5 +1,6 @@
 .main {
   @include container;
+  padding-bottom: var(--footer-min-heigth);
 }
 
 @media (max-width: $tablet-width-only) {

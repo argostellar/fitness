@@ -1,6 +1,7 @@
 .gym {
   @include desktop-container;
   @include flex-row;
+  padding: 0 calc(((100vw - 1366px) / 2) + 65px);
   padding-top: 120px;
   padding-bottom: 230px;
 }
@@ -110,6 +111,19 @@
 
     background-image: url("../../img/desktop-btn-border@1x.png");
     background-repeat: no-repeat;
+  }
+}
+
+.gym__video-btn:hover,
+.gym__video-btn:focus {
+  &::before {
+    background-image:
+      url("../../img/icon-play-button.svg"),
+      linear-gradient(228.89deg, $bg-gradient-color-2 25.38%, $bg-gradient-color-1 74.89%);
+  }
+
+  &::after {
+    transform: rotate(180deg);
   }
 }
 

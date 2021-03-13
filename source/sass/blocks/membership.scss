@@ -50,7 +50,7 @@
   display: none;
 }
 
-.membership__duration-item input[checked] + label {
+.membership__duration-item input:checked + label {
   color: $text-color;
   position: relative;
 

@@ -1,5 +1,6 @@
 .main-screen {
   @include desktop-container;
+  @include flex-column;
   background-image: conic-gradient(from 130.31deg at 16.03% 39.06%, $bg-gradient-color-1 -46.69deg, $bg-gradient-color-2 32.24deg, $bg-gradient-color-1 313.31deg, $bg-gradient-color-2 392.24deg);
   background-size: auto;
   background-position: 0 0;
@@ -8,6 +9,8 @@
   color: $white;
 
   min-height: 658px;
+
+  padding: 0 calc(((100vw - 1366px) / 2) + 65px);
 }
 
 .main-screen__upper-wrapper {
@@ -138,7 +141,6 @@
 }
 
 .main-screen__btn {
-  @include active-states;
   @include roboto-condensed-font;
   color: $white;
   font-weight: 700;
@@ -159,6 +161,12 @@
   border: 4px solid $white;
 
   margin-right: -1px;
+}
+
+.main-screen__btn:hover,
+.main-screen__btn:focus {
+  background-color: $white;
+  color: $text-color;
 }
 
 

@@ -6,11 +6,22 @@ body {
 
   color: $text-color;
 
+  --footer-min-heigth: 108px;
+
   min-width: $mobile-size;
+  min-height: 100vh;
 
   overflow-x: hidden;
 
   position: relative;
+
+  @media (max-width: $tablet-width-only) {
+    --footer-min-heigth: 114px;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    --footer-min-heigth: 260px;
+  }
 }
 
 img {
@@ -49,4 +60,8 @@ input[type="radio"].visually-hidden,
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+.hidden {
+  display: none;
 }

@@ -74,9 +74,9 @@
 @mixin active-states {
   &:hover,
   &:focus {
-    color: $black;
-    border-color: $black;
-    fill: $black;
+    color: $text-color;
+    border-color: $text-color;
+    fill: $text-color;
   }
 
   &:active {
