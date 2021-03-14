@@ -2,18 +2,11 @@
 
 // trainers.js - модуль управления поведением раздела "Тренеры"
 (function () {
+  const trainers = window.global.trainers;
   const prevBtn = window.global.trainersPrevBtn;
   const nextBtn = window.global.trainersNextBtn;
 
-  const swiperContainer = window.global.trainers.querySelector('.swiper-container');
-  const isSwiperContainerExist = window.auxiliary.checkFailSave(swiperContainer);
-
-  const isPrevBtnExist = window.auxiliary.checkFailSave(prevBtn);
-  const isNextBtnExist = window.auxiliary.checkFailSave(nextBtn);
-
-  if (!isPrevBtnExist && !isNextBtnExist && !isSwiperContainerExist) {
-    return;
-  }
+  window.auxiliary.checkSlider(trainers, prevBtn, nextBtn);
 
   const swiperTrainers = new window.Swiper('.swiper-container', {
       slidesPerView: 4,

@@ -2,18 +2,11 @@
 
 // reviews.js - модуль управления поведением раздела "Отзывы"
 (function () {
+  const reviews = window.global.reviews;
   const prevBtn = window.global.reviewsPrevBtn;
   const nextBtn = window.global.reviewsNextBtn;
 
-  const swiperContainer = window.global.reviews.querySelector('.swiper-container');
-  const isSwiperContainerExist = window.auxiliary.checkFailSave(swiperContainer);
-
-  const isPrevBtnExist = window.auxiliary.checkFailSave(prevBtn);
-  const isNextBtnExist = window.auxiliary.checkFailSave(nextBtn);
-
-  if (!isPrevBtnExist && !isNextBtnExist && !isSwiperContainerExist) {
-    return;
-  }
+  window.auxiliary.checkSlider(reviews, prevBtn, nextBtn);
 
   const swiperReviews = new window.Swiper('.reviews__list-wrapper', {
       navigation: {
