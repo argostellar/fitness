@@ -91,7 +91,7 @@
 
     background-image:
       url("../../img/icon-play-button.svg"),
-      linear-gradient(44.89deg, $bg-gradient-color-2 25.38%, $bg-gradient-color-1 74.89%);
+      linear-gradient(44.89deg, $bg-gradient-color-end 25.38%, $bg-gradient-color-start 74.89%);
     background-repeat: no-repeat, repeat;
 
     background-position: 55% 49%;
@@ -119,7 +119,7 @@
   &::before {
     background-image:
       url("../../img/icon-play-button.svg"),
-      linear-gradient(228.89deg, $bg-gradient-color-2 25.38%, $bg-gradient-color-1 74.89%);
+      linear-gradient(228.89deg, $bg-gradient-color-end 25.38%, $bg-gradient-color-start 74.89%);
   }
 
   &::after {
@@ -166,7 +166,7 @@
     margin-bottom: 0;
   }
 
-  .gym__main-text-wrapper p[data-paragraph="2"] {
+  .gym__main-text-wrapper p:nth-child(-2n+2) {
     display: none;
   }
 
@@ -223,7 +223,7 @@
 
       background-image:
         url("../../img/icon-play-button.svg"),
-        linear-gradient(44.89deg, $bg-gradient-color-2 25.38%, $bg-gradient-color-1 74.89%);
+        linear-gradient(44.89deg, $bg-gradient-color-end 25.38%, $bg-gradient-color-start 74.89%);
       background-repeat: no-repeat, repeat;
 
       background-position: 55% 51%;

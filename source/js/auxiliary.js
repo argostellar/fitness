@@ -6,6 +6,14 @@
     return;
   };
 
+  const failSave = (element) => {
+    if (!element) {
+      return stopExecution;
+    }
+
+    return true;
+  };
+
   const defineExistance = (arrayOfStatus) => {
     let isExist = null;
     for (const status of arrayOfStatus) {
@@ -17,7 +25,9 @@
   };
 
   const checkSliderElements = (block, prevBtn, nextBtn) => {
-    const swiperContainer = window.global.block.querySelector('.swiper-container');
+    failSave(block);
+
+    const swiperContainer = block.querySelector(`.swiper-container`);
 
     const isSwiperContainerExist = window.auxiliary.checkFailSave(swiperContainer);
 
@@ -30,32 +40,35 @@
       return stopExecution;
     }
 
-    return;
+    return true;
   };
 
   const scrollToBlock = (block) => {
-    block.scrollIntoView({ block: "center", behavior: "smooth" })
+    block.scrollIntoView({block: `center`, behavior: `smooth`});
   };
 
   const hideBlock = (block) => {
-    block.classList.add('hidden');
+    block.classList.add(`hidden`);
   };
 
   const showBlock = (block) => {
-    block.classList.remove('hidden');
+    block.classList.remove(`hidden`);
   };
 
   const checkFailSave = (block) => {
-    if (block !== undefined) {
-      return true;
+    if (!block) {
+      return false;
     }
+    return true;
   };
 
   window.auxiliary = {
-    scrollToBlock: scrollToBlock,
-    hideBlock: hideBlock,
-    showBlock: showBlock,
-    checkFailSave: checkFailSave,
-    checkSliderElements: checkSliderElements,
+    scrollToBlock,
+    hideBlock,
+    showBlock,
+    checkFailSave,
+    failSave,
+    checkSliderElements,
+    stopExecution,
   };
 })();

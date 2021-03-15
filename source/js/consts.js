@@ -8,13 +8,14 @@
     TAB: 9,
   };
 
-  const Direction = {
-    forward: 'forward',
-    backward: 'backward',
-  }
+  const Tag = {
+    SPAN: `span`,
+    P: `p`,
+    B: `b`,
+  };
 
   window.consts = {
-    KeyboardCode: KeyboardCode,
-    Direction: Direction,
-  }
+    KeyboardCode,
+    Tag,
+  };
 })();

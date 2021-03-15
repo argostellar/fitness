@@ -2,38 +2,28 @@
 
 // membership.js - модуль управления поведением элементов в разделе Абонементы
 (function () {
-  const membership = window.global.membership;
-  const membershipDurList = window.global.membershipDurList;
-  const membershipDurItems = window.global.membershipDurItems;
-  const membershipList = window.global.membershipList;
-  const membershipItems = window.global.membershipItems;
+  const membershipDurItems = document.querySelectorAll(`.membership__duration-item`);
+  const membershipItems = document.querySelectorAll(`.membership__item`);
 
   let pricesMap = {};
-
-  const findInput = (item) => {
-    const input = item.querySelector('input');
-    return input;
-  };
 
   const findInputs = (items) => {
     let inputs = [];
     for (let i = 0; i < items.length; i++) {
-      inputs[i] = findInput(items[i]);
+      inputs[i] = items[i].querySelector(`input`);
     }
     return inputs;
-  };
-
-  const findElement = (item) => {
-    const textItem = item.querySelector('p');
-    return textItem;
   };
 
   const getInitialPrices = (items) => {
     let initialPrices = [];
     for (let i = 0; i < items.length; i++) {
-      const paragraph = findElement(items[i]);
-      const price = parseInt(paragraph.dataset.price, 10);
-      initialPrices[i] = price;
+      window.auxiliary.failSave(items[i]);
+      const paragraph = items[i].querySelector(`p`);
+      if (paragraph) {
+        const price = parseInt(paragraph.textContent, 10);
+        initialPrices[i] = price;
+      }
     }
     return initialPrices;
   };
@@ -69,27 +59,37 @@
     pricesMap = generatePricesMap(prices, values);
   };
 
-  const findParagraphs = (items) => {
-    let paragraphs = [];
+  const findElements = (items, tag) => {
+    let elements = [];
     for (let i = 0; i < items.length; i++) {
-      paragraphs[i] = findElement(items[i]);
+      window.auxiliary.failSave(items[i]);
+      elements[i] = items[i].querySelector(tag);
     }
-    return paragraphs;
+    return elements;
   };
+
   const changeValues = (items, value) => {
-    const paragraphs = findParagraphs(items);
+    const paragraphs = findElements(items, window.consts.Tag.P);
+    const shadows = findElements(items, window.consts.Tag.B);
     const newValues = pricesMap[value];
 
     for (let i = 0; i < paragraphs.length; i++) {
-      paragraphs[i].dataset.price = newValues[i];
-      paragraphs[i].textContent = newValues[i];
+      window.auxiliary.failSave(shadows[i]);
+      window.auxiliary.failSave(paragraphs[i]);
+
+      if (shadows[i]) {
+        shadows[i].textContent = newValues[i];
+      }
+      if (paragraphs[i]) {
+        paragraphs[i].textContent = newValues[i];
+      }
     }
   };
 
   const setListeners = (items) => {
     for (const item of items) {
-      item.addEventListener('keyup', onDurBtnKeyUpChange);
-      item.addEventListener('change', onDurBtnClickChange);
+      item.addEventListener(`keyup`, onDurBtnKeyUpChange);
+      item.addEventListener(`change`, onDurBtnClickChange);
     }
   };
 

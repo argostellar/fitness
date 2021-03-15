@@ -33,6 +33,11 @@
   margin-bottom: 29px;
 }
 
+.callback__name-wrapper,
+.callback__phone-wrapper {
+  position: relative;
+}
+
 .callback__name-wrapper label,
 .callback__phone-wrapper label {
   display: none;

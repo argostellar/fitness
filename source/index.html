@@ -6,6 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Fitness</title>
+  <link rel="preload" href="fonts/bebasneueregular.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/bebasneuebold.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/robotocondensed.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/robotocondensedbold.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/robotocondensedlight.woff2" as="font" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
@@ -14,11 +19,14 @@
     <include src="build/img/sprite_auto.svg"></include>
   </div>
   <main class="main">
+    <h1 class="visually-hidden">Supergym - Фитнес центр в Омске</h1>
     <section class="main-screen">
-      <div class="main-screen__upper-wrapper">
-        <h1>Supergym</h1>
+      <header class="main-screen__upper-wrapper">
+        <a class="main-screen__logo-link">
+          <img src="img/logo.svg" width="87" height="20" alt="Логотип Supergym">
+        </a>
         <a class="main-screen__phone" href="tel:88005555555">8-800-555-55-55</a>
-      </div>
+      </header>
       <div class="main-screen__central-wrapper">
         <div class="main-screen__left-wrapper">
           <p>Омск</p>
@@ -66,8 +74,8 @@
         <h3>Тренажерный зал</h3>
         <p>Просторный зал площадью 900 кв/м</p>
         <div class="gym__main-text-wrapper">
-          <p data-paragraph="1">Supergym – самый большой фитнес центр за Уралом и идеальное место для укрепления тела и здоровья. Тренажерный зал оснащен всем необходимым современным оборудованием для всех спортсменов.</p>
-          <p data-paragraph="2">В зале расположены отдельная зона для Crossfit и кардио-зона с 40 тренажерами. Также в фитнес центре есть несколько оборудованных залов для различных видов групповых занятий.</p>
+          <p>Supergym – самый большой фитнес центр за Уралом и идеальное место для укрепления тела и здоровья. Тренажерный зал оснащен всем необходимым современным оборудованием для всех спортсменов.</p>
+          <p>В зале расположены отдельная зона для Crossfit и кардио-зона с 40 тренажерами. Также в фитнес центре есть несколько оборудованных залов для различных видов групповых занятий.</p>
         </div>
       </div>
       <div class="gym__graphic-wrapper">
@@ -117,7 +125,8 @@
           <h4>С тренером</h4>
           <span>12 занятий</span>
           <div class="membership__price-wrapper">
-            <p data-price="5000">5000 </p>
+            <p>5000 </p>
+            <b>5000</b>
             <svg class="membership__price-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="42">
               <use xlink:href="#icon-ruble"></use>
             </svg>
@@ -128,7 +137,8 @@
           <h4>Дневной</h4>
           <span>с 8:00 до 17:00</span>
           <div class="membership__price-wrapper">
-            <p data-price="1700">1700 </p>
+            <p>1700 </p>
+            <b>1700</b>
             <svg class="membership__price-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="42">
               <use xlink:href="#icon-ruble"></use>
             </svg>
@@ -139,7 +149,8 @@
           <h4>Полный день</h4>
           <span>с 8:00 до 22:00</span>
           <div class="membership__price-wrapper">
-            <p data-price="2700">2700 </p>
+            <p>2700 </p>
+            <b>2700</b>
             <svg class="membership__price-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="42">
               <use xlink:href="#icon-ruble"></use>
             </svg>
@@ -652,7 +663,9 @@
     </section>
   </main>
   <footer class="footer">
-    <a>Supergym</a>
+    <a class="footer__logo-link">
+      <img src="img/logo.svg" width="89" height="20" alt="Логотип Supergym">
+    </a>
     <nav class="footer__nav">
       <ul class="footer__nav-list">
         <li class="footer__nav-item">

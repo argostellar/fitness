@@ -89,7 +89,7 @@
 }
 
 .membership__item:hover {
-  border-image-source: linear-gradient(135deg, $border-gradient-color-1, $border-gradient-color-2);
+  border-image-source: linear-gradient(135deg, $border-gradient-color-start, $border-gradient-color-end);
   border-image-slice: 10;
   border-image-width: 7px;
 }
@@ -103,7 +103,7 @@
   padding-left: 46px;
   padding-right: 46px;
 
-  background-image: linear-gradient(97.05deg, $button-gradient-color-1 17.6%, $button-gradient-color-2 95.31%);
+  background-image: linear-gradient(97.05deg, $button-gradient-color-start 17.6%, $button-gradient-color-end 95.31%);
 }
 
 .membership__item h4 {
@@ -129,6 +129,8 @@
   margin-bottom: 35px;
 
   z-index: 2;
+
+  position: relative;
 }
 
 .membership__price-wrapper p {
@@ -141,27 +143,23 @@
   margin-right: 15px;
 
   z-index: 1;
+}
 
-  position: relative;
+.membership__price-wrapper b {
+  position: absolute;
+  top: -53px;
+  left: -18px;
 
-  --value: attr(data-price);
+  font-weight: 700;
+  font-size: 100px;
+  line-height: 150px;
+  color: $price-fade-color;
 
-  &::before {
-    content: var(--value);
+  opacity: 0.48;
 
-    position: absolute;
-    top: -53px;
-    left: -18px;
+  z-index: -1;
 
-    font-weight: 700;
-    font-size: 100px;
-    line-height: 150px;
-    color: $price-fade-color;
-
-    opacity: 0.48;
-
-    z-index: -1;
-  }
+  pointer-events: none;
 }
 
 .membership__price-wrapper svg {
@@ -199,7 +197,7 @@
   padding-left: 46px;
   padding-right: 46px;
 
-  background-image: linear-gradient(97.05deg, $button-gradient-color-2 17.6%, $button-gradient-color-1 95.31%);
+  background-image: linear-gradient(97.05deg, $button-gradient-color-end 17.6%, $button-gradient-color-start 95.31%);
 }
 
 .membership__img-wrapper {
@@ -336,15 +334,15 @@
 
     margin-right: -3px;
     margin-left: 5px;
+  }
 
-    &::before {
-      top: -43px;
-      left: -18px;
+  .membership__price-wrapper b {
+    top: -43px;
+    left: -12px;
 
-      font-weight: 700;
-      font-size: 80px;
-      line-height: 120px;
-    }
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 120px;
   }
 
   .membership__price-wrapper svg {

@@ -89,7 +89,7 @@
 
 .advantages__numeral-wrapper {
   @include flex-column;
-  background-image: linear-gradient(127.61deg, $text-gradient-color-1 0%, $text-gradient-color-2 45.58%);
+  background-image: linear-gradient(127.61deg, $text-gradient-color-start 0%, $text-gradient-color-end 45.58%);
   background-clip: text;
   color: transparent;
 

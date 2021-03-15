@@ -2,29 +2,74 @@
 
 // auxiliary.js - модуль вспомогательных функций;
 (function () {
+  const stopExecution = () => {
+    return;
+  };
+
+  const failSave = (element) => {
+    if (!element) {
+      return stopExecution;
+    }
+
+    return true;
+  };
+
+  const defineExistance = (arrayOfStatus) => {
+    let isExist = null;
+    for (const status of arrayOfStatus) {
+      if (!status) {
+        isExist = false;
+      }
+    }
+    return isExist;
+  };
+
+  const checkSliderElements = (block, prevBtn, nextBtn) => {
+    failSave(block);
+
+    const swiperContainer = block.querySelector(`.swiper-container`);
+
+    const isSwiperContainerExist = window.auxiliary.checkFailSave(swiperContainer);
+
+    const isPrevBtnExist = window.auxiliary.checkFailSave(prevBtn);
+    const isNextBtnExist = window.auxiliary.checkFailSave(nextBtn);
+
+    const elementsStatus = [isSwiperContainerExist, isPrevBtnExist, isNextBtnExist];
+
+    if (defineExistance(elementsStatus) !== true) {
+      return stopExecution;
+    }
+
+    return true;
+  };
+
   const scrollToBlock = (block) => {
-    block.scrollIntoView({ block: "center", behavior: "smooth" })
+    block.scrollIntoView({block: `center`, behavior: `smooth`});
   };
 
   const hideBlock = (block) => {
-    block.classList.add('hidden');
+    block.classList.add(`hidden`);
   };
 
   const showBlock = (block) => {
-    block.classList.remove('hidden');
+    block.classList.remove(`hidden`);
   };
 
   const checkFailSave = (block) => {
-    if (block !== undefined) {
-      return true;
+    if (!block) {
+      return false;
     }
+    return true;
   };
 
   window.auxiliary = {
-    scrollToBlock: scrollToBlock,
-    hideBlock: hideBlock,
-    showBlock: showBlock,
-    checkFailSave: checkFailSave,
+    scrollToBlock,
+    hideBlock,
+    showBlock,
+    checkFailSave,
+    failSave,
+    checkSliderElements,
+    stopExecution,
   };
 })();
 
@@ -38,67 +83,15 @@
     TAB: 9,
   };
 
-  const Direction = {
-    forward: 'forward',
-    backward: 'backward',
-  }
+  const Tag = {
+    SPAN: `span`,
+    P: `p`,
+    B: `b`,
+  };
 
   window.consts = {
-    KeyboardCode: KeyboardCode,
-    Direction: Direction,
-  }
-})();
-
-'use strict';
-
-// global.js - модуль объектов на странице
-(function () {
-  const main = document.querySelector('.main');
-  const footer = document.querySelector('.footer');
-
-  const mainScreen = document.querySelector('.main-screen');
-  const mainScreenBtn = document.querySelector('.main-screen__btn');
-
-  const membership = document.querySelector('.membership');
-  const membershipDurList = document.querySelector('.membership__duration-list');
-  const membershipDurItems = document.querySelectorAll('.membership__duration-item');
-  const membershipList = document.querySelector('.membership__list');
-  const membershipItems = document.querySelectorAll('.membership__item');
-
-  const trainers = document.querySelector('.trainers');
-  const trainersPrevBtn = document.querySelector('.trainers__button--prev');
-  const trainersNextBtn = document.querySelector('.trainers__button--next');
-  const trainersList = document.querySelector('.trainers__list');
-  const trainersItems = document.querySelectorAll('.trainers__item');
-
-  const reviews = document.querySelector('.reviews');
-  const reviewsPrevBtn = document.querySelector('.reviews__btn--prev');
-  const reviewsNextBtn = document.querySelector('.reviews__btn--next');
-  const reviewsList = document.querySelector('.reviews__list');
-  const reviewsItems = document.querySelectorAll('.reviews__item');
-
-
-
-  window.global = {
-    main: main,
-    footer: footer,
-    mainScreen: mainScreen,
-    mainScreenBtn: mainScreenBtn,
-    membership: membership,
-    membershipDurList: membershipDurList,
-    membershipDurItems: membershipDurItems,
-    membershipList: membershipList,
-    membershipItems: membershipItems,
-    trainers: trainers,
-    trainersPrevBtn: trainersPrevBtn,
-    trainersNextBtn: trainersNextBtn,
-    trainersList: trainersList,
-    trainersItems: trainersItems,
-    reviews: reviews,
-    reviewsPrevBtn: reviewsPrevBtn,
-    reviewsNextBtn: reviewsNextBtn,
-    reviewsList: reviewsList,
-    reviewsItems: reviewsItems,
+    KeyboardCode,
+    Tag,
   };
 })();
 
@@ -106,38 +99,28 @@
 
 // membership.js - модуль управления поведением элементов в разделе Абонементы
 (function () {
-  const membership = window.global.membership;
-  const membershipDurList = window.global.membershipDurList;
-  const membershipDurItems = window.global.membershipDurItems;
-  const membershipList = window.global.membershipList;
-  const membershipItems = window.global.membershipItems;
+  const membershipDurItems = document.querySelectorAll(`.membership__duration-item`);
+  const membershipItems = document.querySelectorAll(`.membership__item`);
 
   let pricesMap = {};
-
-  const findInput = (item) => {
-    const input = item.querySelector('input');
-    return input;
-  };
 
   const findInputs = (items) => {
     let inputs = [];
     for (let i = 0; i < items.length; i++) {
-      inputs[i] = findInput(items[i]);
+      inputs[i] = items[i].querySelector(`input`);
     }
     return inputs;
-  };
-
-  const findElement = (item) => {
-    const textItem = item.querySelector('p');
-    return textItem;
   };
 
   const getInitialPrices = (items) => {
     let initialPrices = [];
     for (let i = 0; i < items.length; i++) {
-      const paragraph = findElement(items[i]);
-      const price = parseInt(paragraph.dataset.price, 10);
-      initialPrices[i] = price;
+      window.auxiliary.failSave(items[i]);
+      const paragraph = items[i].querySelector(`p`);
+      if (paragraph) {
+        const price = parseInt(paragraph.textContent, 10);
+        initialPrices[i] = price;
+      }
     }
     return initialPrices;
   };
@@ -173,27 +156,37 @@
     pricesMap = generatePricesMap(prices, values);
   };
 
-  const findParagraphs = (items) => {
-    let paragraphs = [];
+  const findElements = (items, tag) => {
+    let elements = [];
     for (let i = 0; i < items.length; i++) {
-      paragraphs[i] = findElement(items[i]);
+      window.auxiliary.failSave(items[i]);
+      elements[i] = items[i].querySelector(tag);
     }
-    return paragraphs;
+    return elements;
   };
+
   const changeValues = (items, value) => {
-    const paragraphs = findParagraphs(items);
+    const paragraphs = findElements(items, window.consts.Tag.P);
+    const shadows = findElements(items, window.consts.Tag.B);
     const newValues = pricesMap[value];
 
     for (let i = 0; i < paragraphs.length; i++) {
-      paragraphs[i].dataset.price = newValues[i];
-      paragraphs[i].textContent = newValues[i];
+      window.auxiliary.failSave(shadows[i]);
+      window.auxiliary.failSave(paragraphs[i]);
+
+      if (shadows[i]) {
+        shadows[i].textContent = newValues[i];
+      }
+      if (paragraphs[i]) {
+        paragraphs[i].textContent = newValues[i];
+      }
     }
   };
 
   const setListeners = (items) => {
     for (const item of items) {
-      item.addEventListener('keyup', onDurBtnKeyUpChange);
-      item.addEventListener('change', onDurBtnClickChange);
+      item.addEventListener(`keyup`, onDurBtnKeyUpChange);
+      item.addEventListener(`change`, onDurBtnClickChange);
     }
   };
 
@@ -224,58 +217,54 @@
 
 'use strict';
 
-// reviews.js - модуль управления поведением раздела "Отзывы"
+// reviews.js - модуль управления поведением раздела `Отзывы`
 (function () {
-  const prevBtn = window.global.reviewsPrevBtn;
-  const nextBtn = window.global.reviewsNextBtn;
+  const reviews = document.querySelector(`.reviews`);
+  const prevBtn = document.querySelector(`.reviews__btn--prev`);
+  const nextBtn = document.querySelector(`.reviews__btn--next`);
 
-  const swiperContainer = window.global.reviews.querySelector('.swiper-container');
-  const isSwiperContainerExist = window.auxiliary.checkFailSave(swiperContainer);
+  window.auxiliary.checkSliderElements(reviews, prevBtn, nextBtn);
 
-  const isPrevBtnExist = window.auxiliary.checkFailSave(prevBtn);
-  const isNextBtnExist = window.auxiliary.checkFailSave(nextBtn);
+  const swiperReviews = new window.Swiper(`.reviews__list-wrapper`, {
+    navigation: {
+      nextEl: nextBtn,
+      prevEl: prevBtn,
+    },
+    breakpoints: {
+      320: {
+        width: 226,
+        spaceBetween: 0,
+      },
+      768: {
+        width: 566,
+        spaceBetween: 30,
+      },
+      1366: {
+        width: 560,
+        spaceBetween: 40,
+      }
+    }
+  });
 
-  if (!isPrevBtnExist && !isNextBtnExist && !isSwiperContainerExist) {
-    return;
+  if (!window.auxiliary.checkFailSave(swiperReviews)) {
+    window.auxiliary.stopExecution();
   }
 
-  const swiperReviews = new window.Swiper('.reviews__list-wrapper', {
-      navigation: {
-        nextEl: nextBtn,
-        prevEl: prevBtn,
-      },
-      breakpoints: {
-        320: {
-          width: 226,
-          spaceBetween: 0,
-        },
-        768: {
-          width: 566,
-          spaceBetween: 30,
-        },
-        1366: {
-          width: 560,
-          spaceBetween: 40,
-        }
-      }
-    });
 })();
 
 'use strict';
 
 // utility.js - модуль утилитарных функций;
 (function () {
+  const mainScreenBtn = document.querySelector(`.main-screen__btn`);
 
-  const mainScreen = window.global.mainScreen;
-  const mainScreenBtn = window.global.mainScreenBtn;
-
-  const membership = window.global.membership;
+  const membership = document.querySelector(`.membership`);
 
   const isBtnExist = window.auxiliary.checkFailSave(mainScreenBtn);
   const isMembershipExist = window.auxiliary.checkFailSave(membership);
 
   if (isBtnExist) {
-    mainScreenBtn.addEventListener('click', () => {
+    mainScreenBtn.addEventListener(`click`, () => {
       if (isMembershipExist) {
         window.auxiliary.scrollToBlock(membership);
       }
@@ -286,56 +275,53 @@
 
 'use strict';
 
-// trainers.js - модуль управления поведением раздела "Тренеры"
+// trainers.js - модуль управления поведением раздела `Тренеры`
 (function () {
-  const prevBtn = window.global.trainersPrevBtn;
-  const nextBtn = window.global.trainersNextBtn;
+  const trainers = document.querySelector(`.trainers`);
+  const prevBtn = document.querySelector(`.trainers__button--prev`);
+  const nextBtn = document.querySelector(`.trainers__button--next`);
 
-  const swiperContainer = window.global.trainers.querySelector('.swiper-container');
-  const isSwiperContainerExist = window.auxiliary.checkFailSave(swiperContainer);
+  window.auxiliary.checkSliderElements(trainers, prevBtn, nextBtn);
 
-  const isPrevBtnExist = window.auxiliary.checkFailSave(prevBtn);
-  const isNextBtnExist = window.auxiliary.checkFailSave(nextBtn);
-
-  if (!isPrevBtnExist && !isNextBtnExist && !isSwiperContainerExist) {
-    return;
-  }
-
-  const swiperTrainers = new window.Swiper('.swiper-container', {
-      slidesPerView: 4,
-      slidesPerGroup: 4,
-      navigation: {
-        nextEl: nextBtn,
-        prevEl: prevBtn,
+  const swiperTrainers = new window.Swiper(`.swiper-container`, {
+    slidesPerView: 4,
+    slidesPerGroup: 4,
+    navigation: {
+      nextEl: nextBtn,
+      prevEl: prevBtn,
+    },
+    loop: true,
+    loopFillGroupWithBlank: true,
+    breakpoints: {
+      320: {
+        width: 226,
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 0,
+        slidesOffsetBefore: 112,
+        slidesOffsetAfter: 0,
+        loopAdditionalSlides: 0,
+        loopFillGroupWithBlank: false,
       },
-      loop: true,
-      loopFillGroupWithBlank: true,
-      breakpoints: {
-        320: {
-          width: 226,
-          slidesPerView: 1,
-          slidesPerGroup: 1,
-          spaceBetween: 0,
-          slidesOffsetBefore: 112,
-          slidesOffsetAfter: 0,
-          loopAdditionalSlides: 0,
-          loopFillGroupWithBlank: false,
-        },
-        768: {
-          width: 566,
-          slidesPerView: 2,
-          slidesPerGroup: 2,
-          spaceBetween: 30,
-          loopAdditionalSlides: 2,
-        },
-        1366: {
-          width: 1160,
-          slidesPerView: 4,
-          slidesPerGroup: 4,
-          spaceBetween: 40,
-          loopAdditionalSlides: 4,
-        }
+      768: {
+        width: 566,
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+        spaceBetween: 30,
+        loopAdditionalSlides: 2,
+      },
+      1366: {
+        width: 1160,
+        slidesPerView: 4,
+        slidesPerGroup: 4,
+        spaceBetween: 40,
+        loopAdditionalSlides: 4,
       }
-    });
+    }
+  });
+
+  if (!window.auxiliary.checkFailSave(swiperTrainers)) {
+    window.auxiliary.stopExecution();
+  }
 
 })();
