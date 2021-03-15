@@ -160,6 +160,10 @@
     }
   }
 
+  &:active {
+    opacity: 0.6;
+  }
+
   &--main {
     @include active-states;
     color: $white;

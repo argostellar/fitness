@@ -46,6 +46,10 @@
   color: $text-color;
 }
 
+.membership__duration-item label:active {
+  opacity: 0.75;
+}
+
 .membership__duration-item input {
   display: none;
 }
@@ -94,7 +98,9 @@
   border-image-width: 7px;
 }
 
-.membership__item:hover .membership__link {
+.membership__item:hover .membership__link,
+.membership__link:hover,
+.membership__link:focus {
   color: $white;
   border: none;
 
@@ -246,6 +252,12 @@
     @include flex-column;
   }
 
+  @media (min-width: $mobile-width-only) {
+    .membership__list {
+      margin-bottom: 61px;
+    }
+  }
+
   .membership__item {
     min-width: 442px;
     margin-bottom: 40px;
@@ -267,7 +279,7 @@
   }
 
   .membership__img-wrapper {
-    bottom: -192px;
+    bottom: -131px;
     right: -17px;
   }
 

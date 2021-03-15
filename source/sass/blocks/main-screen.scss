@@ -89,7 +89,6 @@
   font-size: 109px;
   line-height: 109px;
   font-weight: 700;
-  // -webkit-text-stroke: 3px;
   text-align: right;
   letter-spacing: 0.03em;
 
@@ -118,10 +117,13 @@
 .main-screen__img-wrapper {
   min-width: 500px;
   min-height: 556px;
+  height: 556px;
 
   margin-left: 0;
   margin-right: auto;
   margin-top: -5px;
+
+  background-color: $main-screen-img-bg-color;
 }
 
 .main-screen__social-wrapper {
@@ -132,7 +134,7 @@
 
 .main-screen__social-list {
   @include clear-list;
-  margin-bottom: 45px;
+  margin-bottom: 39px;
 }
 
 .main-screen__social-item {
@@ -175,6 +177,10 @@
 .main-screen__btn:focus {
   background-color: $white;
   color: $text-color;
+}
+
+.main-screen__btn:active {
+  opacity: 0.8;
 }
 
 
@@ -245,6 +251,7 @@
   .main-screen__img-wrapper {
     min-width: 324px;
     min-height: 390px;
+    height: 390px;
 
     margin-top: 19px;
     margin-right: 3px;

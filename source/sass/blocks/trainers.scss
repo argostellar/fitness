@@ -90,6 +90,11 @@
   }
 }
 
+.trainers__button:active {
+  opacity: 0.8;
+  outline: none;
+}
+
 .trainers__list {
   @include clear-list;
   @include flex-row;
@@ -240,14 +245,12 @@
     --hmargin: 40px;
 
     &--prev {
-      // margin-right: calc(var(--hmargin) - 10px);
       margin-right: var(--hmargin);
     }
 
     &--next {
       margin-left: calc(var(--hmargin) - 20px);
       margin-right: -10px;
-      // margin-left: var(--hmargin);
     }
   }
 
@@ -322,7 +325,6 @@
 
     &--next {
       margin-left: var(--hmargin);
-      // margin-left: calc(var(--hmargin) - 10px);
       margin-right: 0;
 
       &::before {

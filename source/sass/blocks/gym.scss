@@ -127,6 +127,10 @@
   }
 }
 
+.gym__video-btn:active {
+  opacity: 0.8;
+}
+
 
 @media (max-width: $tablet-width-only) {
   .gym {
@@ -173,6 +177,8 @@
   .gym__img-wrapper {
     overflow: hidden;
     margin-left: 16px;
+
+    background-color: $gym-img-bg-color;
   }
 
   .gym__img-wrapper img {

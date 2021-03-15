@@ -141,6 +141,10 @@
   color: $highlight-red-color;
 }
 
+.promo__link:active {
+  opacity: 0.75;
+}
+
 .promo__img-wrapper {
   height: 500px;
   background-color: $bg-super-img;
@@ -149,7 +153,7 @@
 
 @media (max-width: $tablet-width-only) {
   .promo {
-    margin-top: 161px;
+    margin-top: 100px;
     margin-bottom: 100px;
   }
 

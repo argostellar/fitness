@@ -79,6 +79,12 @@
   background-color: rgba($white, 0.3);
 }
 
+.callback__name-wrapper input:active,
+.callback__phone-wrapper input:active {
+  opacity: 0.6;
+}
+
+
 .callback__btn {
   background-color: transparent;
 

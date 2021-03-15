@@ -30,6 +30,10 @@
   opacity: 0.75;
 }
 
+.footer__logo-link:active {
+  opacity: 0.55;
+}
+
 .footer__nav {
   margin-left: 21px;
 }
@@ -56,8 +60,12 @@
 }
 
 .footer__nav-item a:hover,
-.footer__nav-item a:focus, {
+.footer__nav-item a:focus {
   opacity: 0.75;
+}
+
+.footer__nav-item a:active {
+  opacity: 0.55;
 }
 
 .footer__social-list {
@@ -77,18 +85,15 @@
 }
 
 .footer__social-link:hover,
-.footer__social-link:focus, {
+.footer__social-link:focus {
   opacity: 0.75;
 }
 
+.footer__social-link:focus {
+  opacity: 0.55;
+}
+
 @media (max-width: $tablet-width-only) {
-  // .footer > a {
-  //   font-size: 24px;
-  //   line-height: 24px;
-
-  //   margin-left: calc(((100vw - 768px) / 2) + 45px);
-  // }
-
   .footer__logo-link {
     width: 82px;
     height: 18px;
