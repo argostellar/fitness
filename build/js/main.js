@@ -7,11 +7,12 @@
   };
 
   const failSave = (element) => {
-    if (!element) {
+    const status = checkFailSave(element);
+    if (!status) {
       return stopExecution;
     }
 
-    return true;
+    return status;
   };
 
   const defineExistance = (arrayOfStatus) => {
@@ -25,7 +26,10 @@
   };
 
   const checkSliderElements = (block, prevBtn, nextBtn) => {
-    failSave(block);
+    const status = checkFailSave(block);
+    if (!status) {
+      return;
+    }
 
     const swiperContainer = block.querySelector(`.swiper-container`);
 
@@ -56,10 +60,7 @@
   };
 
   const checkFailSave = (block) => {
-    if (!block) {
-      return false;
-    }
-    return true;
+    return Boolean(block);
   };
 
   window.auxiliary = {
@@ -118,8 +119,7 @@
       window.auxiliary.failSave(items[i]);
       const paragraph = items[i].querySelector(`p`);
       if (paragraph) {
-        const price = parseInt(paragraph.textContent, 10);
-        initialPrices[i] = price;
+        initialPrices[i] = parseInt(paragraph.textContent, 10);
       }
     }
     return initialPrices;

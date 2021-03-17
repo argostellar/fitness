@@ -1,5 +1,4 @@
 .main-screen {
-  @include desktop-container;
   @include flex-column;
   background-image: conic-gradient(from 130.31deg at 16.03% 39.06%, $bg-gradient-color-start -46.69deg, $bg-gradient-color-end 32.24deg, $bg-gradient-color-start 313.31deg, $bg-gradient-color-end 392.24deg);
   background-size: auto;
@@ -10,49 +9,8 @@
 
   min-height: 658px;
 
-  padding: 0 calc(((100vw - 1366px) / 2) + 65px);
-}
-
-.main-screen__upper-wrapper {
-  @include flex-row;
-  justify-content: space-between;
-
-  padding-top: 30px;
-}
-
-.main-screen__logo-link {
-  width: 87px;
-  height: 20px;
-
-  margin-left: 38px;
-  margin-top: 1px;
-}
-
-.main-screen__upper-wrapper h1 {
-  @include reset-space;
-  @include bebas-neue-font;
-  font-size: 26px;
-  line-height: 26px;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-
-  margin-left: 38px;
-}
-
-.main-screen__phone {
-  @include active-states;
-  @include bebas-neue-font;
-  color: $white;
-  font-size: 26px;
-  line-height: 26px;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-
-  vertical-align: middle;
-  text-align: center;
-  text-decoration: none;
-  margin-right: 22px;
-  margin-top: 0;
+  padding: 0 calc(((100vw - var(--width)) / 2) + var(--gap));
+  padding-top: var(--header-min-height);
 }
 
 .main-screen__central-wrapper {
@@ -186,39 +144,12 @@
 
 @media (max-width: $tablet-width-only) {
   .main-screen {
-    @include tablet-container;
     background-image: conic-gradient(from 139.4deg at 20.7% 35.74%, $bg-gradient-color-start -46.69deg, $bg-gradient-color-end 32.24deg, $bg-gradient-color-start 313.31deg, $bg-gradient-color-end 392.24deg);
     background-size: auto;
     background-position: 0 0;
     background-repeat: repeat no-repeat;
 
     min-height: 554px;
-  }
-
-  .main-screen__upper-wrapper {
-    padding-top: 39px;
-    padding-left: 20px;
-    padding-right: 3px;
-  }
-
-  .main-screen__logo-link {
-    width: 82px;
-    height: 17px;
-
-    margin-left: -1px;
-  }
-
-  .main-screen__upper-wrapper h1 {
-    font-size: 24px;
-    line-height: 24px;
-    margin: 0;
-  }
-
-  .main-screen__phone {
-    font-size: 24px;
-    line-height: 24px;
-    font-weight: 400;
-    margin: 0;
   }
 
   .main-screen__left-wrapper {
@@ -279,35 +210,12 @@
 
 @media (max-width: $mobile-width-only) {
   .main-screen {
-    @include mobile-container;
     background-image: conic-gradient(from 171.43deg at 35.31% 34.22%, $bg-gradient-color-start -46.69deg, $bg-gradient-color-end 32.24deg, $bg-gradient-color-start 313.31deg, $bg-gradient-color-end 392.24deg);
     background-size: auto;
     background-position: 0 0;
     background-repeat: repeat no-repeat;
 
     min-height: 491px;
-  }
-
-  .main-screen__upper-wrapper {
-    padding: 0;
-    padding-top: 19px;
-  }
-
-  .main-screen__logo-link {
-    width: 68px;
-    height: 15px;
-
-    margin-left: 0;
-  }
-
-  .main-screen__upper-wrapper h1 {
-    font-size: 20px;
-    line-height: 20px;
-  }
-
-  .main-screen__phone {
-    font-size: 20px;
-    line-height: 20px;
   }
 
   .main-screen__left-wrapper {

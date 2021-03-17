@@ -6,7 +6,11 @@ body {
 
   color: $text-color;
 
-  --footer-min-heigth: 108px;
+  --width: 1366px;
+  --gap: 65px;
+
+  --header-min-height: 56px;
+  --footer-min-height: 108px;
 
   min-width: $mobile-size;
   min-height: 100vh;
@@ -16,11 +20,17 @@ body {
   position: relative;
 
   @media (max-width: $tablet-width-only) {
-    --footer-min-heigth: 114px;
+    --width: 768px;
+    --gap: 25px;
+    --header-min-height: 63px;
+    --footer-min-height: 114px;
   }
 
   @media (max-width: $mobile-width-only) {
-    --footer-min-heigth: 260px;
+    --width: 320px;
+    --gap: 15px;
+    --header-min-height: 39px;
+    --footer-min-height: 260px;
   }
 }
 

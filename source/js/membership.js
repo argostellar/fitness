@@ -21,8 +21,7 @@
       window.auxiliary.failSave(items[i]);
       const paragraph = items[i].querySelector(`p`);
       if (paragraph) {
-        const price = parseInt(paragraph.textContent, 10);
-        initialPrices[i] = price;
+        initialPrices[i] = parseInt(paragraph.textContent, 10);
       }
     }
     return initialPrices;

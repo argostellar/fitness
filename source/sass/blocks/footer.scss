@@ -5,7 +5,7 @@
   background-color: $footer-bg-color;
   color: $white;
 
-  min-height: var(--footer-min-heigth);
+  min-height: var(--footer-min-height);
   width: 100%;
 
   margin-top: auto;
@@ -21,7 +21,7 @@
 
   padding-right: 2px;
 
-  margin-left: calc(((100vw - 1366px) / 2) + 104px);
+  margin-left: calc(((100vw - var(--width)) / 2) + 104px);
   margin-top: 2px;
 }
 
@@ -73,7 +73,7 @@
   @include flex-row;
 
   margin-top: 5px;
-  margin-right: calc(((100vw - 1366px) / 2) + 86px);
+  margin-right: calc(((100vw - var(--width)) / 2) + 86px);
 }
 
 .footer__social-item {
@@ -98,7 +98,7 @@
     width: 82px;
     height: 18px;
 
-    margin-left: calc(((100vw - 768px) / 2) + 45px);
+    margin-left: calc(((100vw - var(--width)) / 2) + 45px);
     margin-top: 0;
   }
 
@@ -112,7 +112,7 @@
 
   .footer__social-list {
     margin-top: 5px;
-    margin-right: calc(((100vw - 768px) / 2) + 28px);
+    margin-right: calc(((100vw - var(--width)) / 2) + 28px);
   }
 
   .footer__social-item {
@@ -137,12 +137,12 @@
     width: 68px;
     height: 15px;
 
-    margin-left: calc(((100vw - 320px) / 2) + 15px);
+    margin-left: calc(((100vw - var(--width)) / 2) + 15px);
     margin-top: 50px;
   }
 
   .footer__nav {
-    margin-left: calc(((100vw - 320px) / 2) + 15px);
+    margin-left: calc(((100vw - var(--width)) / 2) + 15px);
     margin-top: 19px;
     margin-bottom: 10px;
   }
@@ -174,7 +174,7 @@
     align-items: center;
     margin-top: 6px;
     margin-right: 0;
-    margin-left: calc(((100vw - 320px) / 2) + 15px);
+    margin-left: calc(((100vw - var(--width)) / 2) + 15px);
   }
 
   .footer__social-item {

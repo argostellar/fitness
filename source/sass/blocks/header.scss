@@ -1,0 +1,78 @@
+.header {
+  @include flex-row;
+  justify-content: space-between;
+
+  color: $white;
+
+  min-height: var(--header-min-height);
+  width: 100%;
+
+  padding: 0 calc(((100vw - var(--width)) / 2) + var(--gap));
+
+  position: absolute;
+  top: 30px;
+}
+
+.header__logo-link {
+  width: 87px;
+  height: 20px;
+
+  margin-left: 38px;
+  margin-top: 1px;
+}
+
+.header__phone {
+  @include active-states;
+  @include bebas-neue-font;
+  color: $white;
+  font-size: 26px;
+  line-height: 26px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 22px;
+  margin-top: 0;
+}
+
+@media (max-width: $tablet-width-only) {
+  .header {
+    top: 39px;
+  }
+
+  .header__logo-link {
+    width: 82px;
+    height: 17px;
+
+    margin-left: 20px;
+  }
+
+  .header__phone {
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 400;
+    margin: 0;
+    padding-right: 3px;
+  }
+}
+
+@media (max-width: $mobile-width-only) {
+  .header {
+    top: 19px;
+  }
+
+  .header__logo-link {
+    width: 68px;
+    height: 15px;
+
+    margin-left: 0;
+  }
+
+  .header__phone {
+    font-size: 20px;
+    line-height: 20px;
+    padding-right: 0;
+  }
+}
