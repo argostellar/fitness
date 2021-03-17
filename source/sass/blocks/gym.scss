@@ -64,6 +64,8 @@
 }
 
 .gym__video-btn {
+  // Проверить треугольник
+  cursor: pointer;
   position: absolute;
   top: calc(228px / 2);
   left: calc(364px / 2);

@@ -41,10 +41,10 @@
     const elementsStatus = [isSwiperContainerExist, isPrevBtnExist, isNextBtnExist];
 
     if (defineExistance(elementsStatus) !== true) {
-      return stopExecution;
+      return;
     }
 
-    return true;
+    return;
   };
 
   const scrollToBlock = (block) => {

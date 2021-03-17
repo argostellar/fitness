@@ -42,6 +42,10 @@
   }
 }
 
+.membership__duration-item label {
+  cursor: pointer;
+}
+
 .membership__duration-item:hover label {
   color: $text-color;
 }
