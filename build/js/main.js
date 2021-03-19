@@ -101,7 +101,6 @@
 // membership.js - модуль управления поведением элементов в разделе Абонементы
 (function () {
   const membershipDurItems = document.querySelectorAll(`.membership__duration-item`);
-  const membershipItems = document.querySelectorAll(`.membership__item`);
 
   const oneMonthList = document.querySelectorAll(`.membership__list--1month`);
   const sixMonthsList = document.querySelectorAll(`.membership__list--6months`);

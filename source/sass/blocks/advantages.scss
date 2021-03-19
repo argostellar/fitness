@@ -89,10 +89,6 @@
 
 .advantages__numeral-wrapper {
   @include flex-column;
-  background-image: linear-gradient(127.61deg, $text-gradient-color-start 0%, $text-gradient-color-end 45.58%);
-  background-clip: text;
-  color: transparent;
-
   margin-right: 30px;
 }
 
@@ -113,6 +109,12 @@
 }
 
 .advantages__numeral-wrapper span {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: linear-gradient(127.61deg, $text-gradient-color-start 0%, $text-gradient-color-end 45.58%);
+  background-clip: text;
+  color: transparent;
+
   font-weight: 700;
   font-size: 71px;
   line-height: 106px;

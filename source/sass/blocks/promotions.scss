@@ -103,7 +103,9 @@
   min-width: 560px;
   min-height: 211px;
 
-  border: 7px solid transparent;
+  border-style: solid;
+  border-width: 7px;
+
   border-image-source: linear-gradient(148.82deg, $border-gradient-color-start 0.85%, $border-gradient-color-end 100%);
   border-image-width: 7px;
   border-image-slice: 7;
