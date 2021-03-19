@@ -23,6 +23,8 @@
   max-width: 410px;
   margin-left: auto;
   margin-right: 170px;
+
+  appearance: none;
 }
 
 .callback__input-wrapper {
@@ -44,6 +46,8 @@
 
 .callback__name-wrapper input,
 .callback__phone-wrapper input {
+  appearance: none;
+
   width: 190px;
   background-color: transparent;
   color: $white;
