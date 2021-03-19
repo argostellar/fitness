@@ -49,6 +49,10 @@
   max-width: 1440px;
 }
 
+@mixin tablet-right-padding {
+  padding-right: calc(((100vw - var(--width)) / 2) + var(--gap) + 17px);
+}
+
 @mixin container {
   margin: 0 auto;
 }

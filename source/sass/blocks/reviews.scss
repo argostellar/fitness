@@ -153,6 +153,12 @@
     margin-top: 99px;
   }
 
+  @media (min-width: $mobile-width-only) {
+    .reviews {
+      margin-right: 17px;
+    }
+  }
+
   .reviews h3 {
     font-size: 42px;
     line-height: 42px;

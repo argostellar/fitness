@@ -37,8 +37,17 @@
   color: $white;
   background-color: $highlight-red-color;
 
+  min-height: 462px;
+  max-width: 280px;
+
   padding: 45px;
   padding-top: 33px;
+}
+
+.promotions__text-wrapper h4,
+.promotions__text-wrapper p,
+.promotions__text-wrapper span {
+  max-width: 100%;
 }
 
 .promotions__text-wrapper h4 {
@@ -63,6 +72,7 @@
 
   max-width: 189px;
 
+  padding-bottom: 70px;
   margin-bottom: auto;
 }
 
@@ -121,6 +131,7 @@
   @include reset-space;
   font-size: 16px;
   line-height: 22px;
+  padding-bottom: 70px;
   margin-bottom: auto;
 }
 
@@ -133,6 +144,8 @@
   text-align: center;
 
   color: $highlight-blue-color;
+
+  max-width: 100%;
 
   margin-top: auto;
   margin-bottom: 1px;
@@ -188,6 +201,12 @@
     margin-top: 99px;
   }
 
+  @media (min-width: $mobile-width-only) {
+    .promotions {
+      margin-right: 17px;
+    }
+  }
+
   .promotions h3 {
     font-size: 42px;
     line-height: 42px;
@@ -230,7 +249,16 @@
     min-width: 324px;
 
     margin-bottom: 0;
-    margin-right: 30px;
+  }
+
+  @media (min-width: $mobile-width-only) {
+    .promotions__minor-promo-item {
+      margin-right: 30px;
+    }
+  }
+
+  .promotions__minor-promo-item p {
+    padding-bottom: 49px;
   }
 }
 
@@ -263,6 +291,7 @@
 
   .promotions__text-wrapper {
     min-height: 299px;
+    max-width: 100%;
     align-items: center;
 
     padding: 45px;
@@ -271,6 +300,7 @@
 
   .promotions__text-wrapper p {
     text-align: center;
+    padding-bottom: 30px;
     margin-top: -5px;
   }
 
@@ -286,6 +316,9 @@
 
   .promotions__minor-promo-list {
     @include flex-column;
+    --item-margin: calc((100vw - 290px) / 2);
+    margin-left: var(--item-margin);
+    margin-right: var(--item-margin);
   }
 
   .promotions__minor-promo-item {
@@ -300,5 +333,6 @@
 
   .promotions__minor-promo-item p {
     text-align: center;
+    padding-bottom: 25px;
   }
 }

@@ -122,7 +122,7 @@
           </ul>
         </form>
       </div>
-      <ul class="membership__list">
+      <ul class="membership__list membership__list--1month">
         <li class="membership__item">
           <h4>С тренером</h4>
           <span>12 занятий</span>
@@ -153,6 +153,58 @@
           <div class="membership__price-wrapper">
             <p>2700 </p>
             <b>2700</b>
+            <svg class="membership__price-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="42">
+              <use xlink:href="#icon-ruble"></use>
+            </svg>
+          </div>
+          <a class="membership__link" href="potential-page.html">Купить абонемент</a>
+        </li>
+      </ul>
+      <ul class="membership__list membership__list--6months membership__list--hidden">
+        <li class="membership__item">
+          <h4>Дневной</h4>
+          <span>с 8:00 до 17:00</span>
+          <div class="membership__price-wrapper">
+            <p>10200 </p>
+            <b>10200</b>
+            <svg class="membership__price-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="42">
+              <use xlink:href="#icon-ruble"></use>
+            </svg>
+          </div>
+          <a class="membership__link" href="potential-page.html">Купить абонемент</a>
+        </li>
+        <li class="membership__item">
+          <h4>Полный день</h4>
+          <span>с 8:00 до 22:00</span>
+          <div class="membership__price-wrapper">
+            <p>16200 </p>
+            <b>16200</b>
+            <svg class="membership__price-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="42">
+              <use xlink:href="#icon-ruble"></use>
+            </svg>
+          </div>
+          <a class="membership__link" href="potential-page.html">Купить абонемент</a>
+        </li>
+      </ul>
+      <ul class="membership__list membership__list--12months membership__list--hidden">
+        <li class="membership__item">
+          <h4>Дневной</h4>
+          <span>с 8:00 до 17:00</span>
+          <div class="membership__price-wrapper">
+            <p>20400 </p>
+            <b>20400</b>
+            <svg class="membership__price-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="42">
+              <use xlink:href="#icon-ruble"></use>
+            </svg>
+          </div>
+          <a class="membership__link" href="potential-page.html">Купить абонемент</a>
+        </li>
+        <li class="membership__item">
+          <h4>Полный день</h4>
+          <span>с 8:00 до 22:00</span>
+          <div class="membership__price-wrapper">
+            <p>32400 </p>
+            <b>32400</b>
             <svg class="membership__price-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="42">
               <use xlink:href="#icon-ruble"></use>
             </svg>
@@ -635,7 +687,7 @@
             </div>
             <div class="callback__phone-wrapper">
               <label for="phone-input">Телефон: </label>
-              <input type="tel" name="user-phone" id="phone-input" placeholder="Телефон" pattern="(\+7\([0-9]{3}\)[0-9]{3}[0-9]{4})" required>
+              <input type="tel" name="user-phone" id="phone-input" placeholder="Телефон" pattern="(\+7\([0-9]{3}\)[0-9]{3}[0-9]{4})|(\+7[0-9]{10})|([0-9]{11})" required>
             </div>
           </div>
           <button class="callback__btn" type="submit">отправить</button>
@@ -649,16 +701,16 @@
             <p>г. Омск, ул. 60 лет Октября, 7</p>
           </li>
           <li class="contacts__item">
+            <span>Телефон:</span>
+            <p><a class="contacts__link" href="tel:88005555555">8-800-555-55-55</a></p>
+          </li>
+          <li class="contacts__item">
             <span>График работы:</span>
             <p>Пн-Вс: с 8:00 до 22:00</p>
           </li>
           <li class="contacts__item">
-            <span>Телефон:</span>
-            <p>8-800-555-55-55</p>
-          </li>
-          <li class="contacts__item">
             <span>Email:</span>
-            <p>omsk@supergym.ru</p>
+            <p><a class="contacts__link" href="mailto:omsk@supergym.ru">omsk@supergym.ru</a></p>
           </li>
         </ul>
       </section>
@@ -712,6 +764,7 @@
           </svg>
         </a>
       </li>
+
     </ul>
   </footer>
   <script src="js/vendor.js"></script>

@@ -157,6 +157,12 @@
     margin-bottom: 100px;
   }
 
+  @media (min-width: $mobile-width-only) {
+    .promo {
+      margin-right: 17px;
+    }
+  }
+
   .promo__wrapper {
     min-width: 678px;
     min-height: 292px;

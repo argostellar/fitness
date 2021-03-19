@@ -1,7 +1,7 @@
 .gym {
   @include desktop-container;
   @include flex-row;
-  padding: 0 calc(((100vw - 1366px) / 2) + 65px);
+  padding: 0 calc(((100vw - var(--width)) / 2) + var(--gap));
   padding-top: 120px;
   padding-bottom: 230px;
 }
@@ -46,7 +46,7 @@
 
 .gym__video-wrapper {
   position: absolute;
-  bottom: -115px;
+  top: 288px;
   left: -63px;
 
   &::before {
@@ -64,7 +64,6 @@
 }
 
 .gym__video-btn {
-  // Проверить треугольник
   cursor: pointer;
   position: absolute;
   top: calc(228px / 2);
@@ -92,7 +91,7 @@
     border-radius: 50%;
 
     background-image:
-      url("../../img/icon-play-button.svg"),
+      url("../img/icon-play-button.svg"),
       linear-gradient(44.89deg, $bg-gradient-color-end 25.38%, $bg-gradient-color-start 74.89%);
     background-repeat: no-repeat, repeat;
 
@@ -111,7 +110,7 @@
 
     border-radius: 50%;
 
-    background-image: url("../../img/desktop-btn-border@1x.png");
+    background-image: url("../img/desktop-btn-border@1x.png");
     background-repeat: no-repeat;
   }
 }
@@ -120,7 +119,7 @@
 .gym__video-btn:focus {
   &::before {
     background-image:
-      url("../../img/icon-play-button.svg"),
+      url("../img/icon-play-button.svg"),
       linear-gradient(228.89deg, $bg-gradient-color-end 25.38%, $bg-gradient-color-start 74.89%);
   }
 
@@ -140,7 +139,13 @@
     @include flex-column;
     align-items: center;
     padding-top: 100px;
-    padding-bottom: 180px;
+    padding-bottom: 186px;
+  }
+
+  @media (min-width: $mobile-width-only) {
+    .gym {
+      @include tablet-right-padding;
+    }
   }
 
   .gym__text-wrapper {
@@ -180,6 +185,8 @@
     overflow: hidden;
     margin-left: 16px;
 
+    height: 345px;
+
     background-color: $gym-img-bg-color;
   }
 
@@ -192,7 +199,7 @@
 
   .gym__video-wrapper {
     position: absolute;
-    bottom: -83px;
+    top: 261px;
     left: 222px;
 
     &::before {
@@ -230,7 +237,7 @@
       height: 52px;
 
       background-image:
-        url("../../img/icon-play-button.svg"),
+        url("../img/icon-play-button.svg"),
         linear-gradient(44.89deg, $bg-gradient-color-end 25.38%, $bg-gradient-color-start 74.89%);
       background-repeat: no-repeat, repeat;
 
@@ -247,7 +254,7 @@
 
       border-radius: 50%;
 
-      background-image: url("../../img/tablet-btn-border@1x.png");
+      background-image: url("../img/tablet-btn-border@1x.png");
     }
   }
 }
@@ -259,7 +266,7 @@
     @include flex-column;
     align-items: center;
     padding-top: 70px;
-    padding-bottom: 70px;
+    padding-bottom: 76px;
   }
 
   .gym__text-wrapper {
@@ -295,6 +302,8 @@
     overflow: hidden;
     margin-left: 0;
     margin-bottom: 34px;
+
+    height: 313px;
   }
 
   .gym__img-wrapper img {
@@ -306,7 +315,8 @@
 
   .gym__video-wrapper {
     position: relative;
-    bottom: 0;
+    top: initial;
+    bottom: -6px;
     left: 0;
 
     width: 100%;

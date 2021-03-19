@@ -61,7 +61,7 @@
   align-items: flex-end;
 
   position: absolute;
-  bottom: 28px;
+  top: 134px;
   right: 264px;
 }
 
@@ -152,6 +152,12 @@
     min-height: 554px;
   }
 
+  @media (min-width: $mobile-width-only) {
+    .main-screen {
+      @include tablet-right-padding;
+    }
+  }
+
   .main-screen__left-wrapper {
     margin-right: 30px;
   }
@@ -175,7 +181,7 @@
   }
 
   .main-screen__list {
-    bottom: 16px;
+    top: 94px;
     right: 211px;
   }
 
@@ -242,7 +248,7 @@
   }
 
   .main-screen__list {
-    bottom: 10px;
+    top: 90px;
     right: 177px;
   }
 

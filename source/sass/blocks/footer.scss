@@ -1,12 +1,15 @@
 .footer {
   @include flex-row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   background-color: $footer-bg-color;
   color: $white;
 
   min-height: var(--footer-min-height);
   width: 100%;
+  max-width: 100%;
+
+  padding-top: 43px;
 
   margin-top: auto;
   margin-bottom: 0;
@@ -41,6 +44,9 @@
 .footer__nav-list {
   @include clear-list;
   @include flex-row;
+  align-content: start;
+  flex-wrap: wrap;
+  max-width: 431px;
 }
 
 .footer__nav-item {
@@ -71,16 +77,24 @@
 .footer__social-list {
   @include clear-list;
   @include flex-row;
+  flex-wrap: wrap;
 
-  margin-top: 5px;
-  margin-right: calc(((100vw - var(--width)) / 2) + 86px);
+  max-width: 122px;
+
+  margin-right: calc(((100vw - var(--width)) / 2) + 74px);
 }
 
 .footer__social-item {
+  @include flex-column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-width: 24px;
+  min-height: 24px;
   margin-right: 25px;
+  margin-bottom: 25px;
 }
 
-.footer__social-item:last-child {
+.footer__social-item:nth-child(3n) {
   margin-right: 0;
 }
 
@@ -94,16 +108,21 @@
 }
 
 @media (max-width: $tablet-width-only) {
+  .footer {
+    padding-top: 40px;
+  }
+
   .footer__logo-link {
     width: 82px;
     height: 18px;
 
     margin-left: calc(((100vw - var(--width)) / 2) + 45px);
-    margin-top: 0;
+    margin-top: 8px;
   }
 
   .footer__nav {
     margin-left: 19px;
+    margin-top: 6px;
   }
 
   .footer__nav-item {
@@ -112,7 +131,7 @@
 
   .footer__social-list {
     margin-top: 5px;
-    margin-right: calc(((100vw - var(--width)) / 2) + 28px);
+    margin-right: calc(((100vw - var(--width)) / 2) + 33px);
   }
 
   .footer__social-item {
@@ -125,6 +144,8 @@
     @include flex-column;
     align-items: flex-start;
     justify-content: flex-start;
+
+    padding-top: 0;
   }
 
   .footer__logo-link {
@@ -175,6 +196,8 @@
     margin-top: 6px;
     margin-right: 0;
     margin-left: calc(((100vw - var(--width)) / 2) + 15px);
+
+    max-width: 173px;
   }
 
   .footer__social-item {

@@ -4,3 +4,8 @@
     display: none;
   }
 }
+
+.swiper-button-next.swiper-button-disabled {
+  cursor: pointer;
+  pointer-events: auto;
+}

@@ -42,6 +42,12 @@
     top: 39px;
   }
 
+  @media (min-width: $mobile-width-only) {
+    .header {
+      @include tablet-right-padding;
+    }
+  }
+
   .header__logo-link {
     width: 82px;
     height: 17px;

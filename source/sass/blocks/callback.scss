@@ -2,8 +2,7 @@
   @include flex-column;
   color: $white;
   background-color: $text-color;
-  min-width: 683px;
-  width: 50%;
+  width: calc(100vw - 50.5% + 3px);
 }
 
 .callback h3 {

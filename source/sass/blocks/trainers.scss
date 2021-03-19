@@ -4,6 +4,10 @@
   margin-bottom: 110px;
 
   --sliderElements: 4;
+  --max-width: 1160px;
+  --margin-right: 40px;
+  --gaps: calc(var(--sliderElements) - 1);
+  --items-length: calc(var(--max-width) - var(--margin-right) * var(--gaps));
 }
 
 .trainers h3 {
@@ -21,12 +25,16 @@
 
 .trainers__wrapper {
   @include flex-row;
-  justify-content: center;
-  margin-left: 27px;
+  justify-content: space-between;
+  max-width: 100%;
+  margin-left: 26px;
 }
 
 .trainers__list-wrapper {
   overflow: hidden;
+  max-width: 1160px;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 
@@ -63,6 +71,7 @@
   --hmargin: 40px;
 
   &--prev {
+    margin-left: auto;
     margin-right: var(--hmargin);
 
 
@@ -74,7 +83,10 @@
   }
 
   &--next {
-    margin-left: calc(var(--hmargin) - 30px);
+    // margin-left: calc(var(--hmargin) - 30px);
+    // margin-left: var(--hmargin);
+    margin-left: calc(var(--hmargin) + 10px);
+    margin-right: auto;
 
     &::before {
       left: -11px;
@@ -100,7 +112,8 @@
   @include clear-list;
   @include flex-row;
 
-  max-width: 1200px;
+  --max-width: 1200px;
+  max-width: var(--max-width);
 
   align-self: center;
   margin-left: auto;
@@ -112,8 +125,8 @@
 }
 
 .trainers__item {
-  min-width: 260px;
-  width: 260px;
+  --margin-right: 40px;
+  max-width: calc(var(--items-length) / 4);
   height: 294px;
 
   flex-grow: 0;
@@ -161,7 +174,7 @@
   top: 0;
   left: 0;
 
-  width: 260px;
+  width: 100%;
   height: 294px;
 
   z-index: -1;
@@ -214,6 +227,12 @@
     --sliderElements: 2;
   }
 
+  @media (min-width: $mobile-width-only) {
+    .trainers {
+      margin-right: 17px;
+    }
+  }
+
   .trainers h3 {
     font-size: 42px;
     line-height: 42px;
@@ -224,12 +243,13 @@
     margin-left: 17px;
   }
 
-  .trainers__wrapper {
-    margin-left: 16px;
+
+  .trainers__list-wrapper {
+    max-width: 566px;
   }
 
   .trainers__list {
-    max-width: 596px;
+    max-width: 566px;
   }
 
   .trainers__item {
@@ -250,8 +270,7 @@
     }
 
     &--next {
-      margin-left: calc(var(--hmargin) - 20px);
-      margin-right: -10px;
+      margin-left: calc(var(--hmargin) + 10px);
     }
   }
 
