@@ -5,6 +5,7 @@ body {
   @include page-main-font;
 
   color: $text-color;
+  text-rendering: optimizeLegibility;
 
   --width: 1366px;
   --gap: 65px;
