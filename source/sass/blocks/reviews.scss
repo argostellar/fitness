@@ -7,6 +7,12 @@
   --sliderElements: 1;
 }
 
+@media (min-width: $desktop-width-only) {
+  .reviews {
+    margin-right: 17px;
+  }
+}
+
 .reviews h3 {
   @include reset-space;
   @include bebas-neue-font;

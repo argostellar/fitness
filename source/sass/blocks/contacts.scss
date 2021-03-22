@@ -1,6 +1,5 @@
 .contacts {
   @include flex-column;
-  border-top: 1px solid $contacts-border-color;
   width: calc(100vw - 51.5%);
 }
 

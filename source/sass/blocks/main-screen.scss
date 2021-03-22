@@ -13,6 +13,12 @@
   padding-top: var(--header-min-height);
 }
 
+@media (min-width: $desktop-width-only) {
+  .main-screen {
+    @include tablet-right-padding;
+  }
+}
+
 .main-screen__central-wrapper {
   @include flex-row;
   justify-content: space-between;

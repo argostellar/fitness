@@ -13,6 +13,12 @@
   top: 30px;
 }
 
+@media (min-width: $desktop-width-only) {
+  .header {
+    @include tablet-right-padding;
+  }
+}
+
 .header__logo-link {
   width: 87px;
   height: 20px;

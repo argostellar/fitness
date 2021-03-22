@@ -8,6 +8,12 @@
   position: relative;
 }
 
+@media (min-width: $desktop-width-only) {
+  .membership {
+    padding-right: 17px;
+  }
+}
+
 .membership h3 {
   @include reset-space;
   @include bebas-neue-font;
@@ -231,7 +237,7 @@
 .membership__img-wrapper {
   position: absolute;
   bottom: -155px;
-  right: -115px;
+  right: -98px;
   z-index: 0;
 }
 

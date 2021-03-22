@@ -6,6 +6,12 @@
   margin-top: 119px;
 }
 
+@media (min-width: $desktop-width-only) {
+  .promotions {
+    margin-right: 17px;
+  }
+}
+
 .promotions h3 {
   @include reset-space;
   @include bebas-neue-font;

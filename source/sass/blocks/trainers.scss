@@ -10,6 +10,12 @@
   --items-length: calc(var(--max-width) - var(--margin-right) * var(--gaps));
 }
 
+@media (min-width: $desktop-width-only) {
+  .trainers {
+    margin-right: 17px;
+  }
+}
+
 .trainers h3 {
   @include reset-space;
   @include bebas-neue-font;
