@@ -4,8 +4,8 @@
   font-style: normal;
   font-display: swap;
   src: local("Roboto Condensed"),
-    url("../fonts/robotocondensed.woff2") format("woff2"),
-    url("../fonts/robotocondensed.woff") format("woff");
+    url("./../fonts/robotocondensed.woff2") format("woff2"),
+    url("./../fonts/robotocondensed.woff") format("woff");
 }
 
 @font-face {
@@ -14,8 +14,8 @@
   font-style: normal;
   font-display: swap;
   src: local("Roboto Condensed"),
-    url("../fonts/robotocondensedbold.woff2") format("woff2"),
-    url("../fonts/robotocondensedbold.woff") format("woff");
+    url("./../fonts/robotocondensedbold.woff2") format("woff2"),
+    url("./../fonts/robotocondensedbold.woff") format("woff");
 }
 
 @font-face {
@@ -24,8 +24,8 @@
   font-style: normal;
   font-display: swap;
   src: local("Roboto Condensed"),
-    url("../fonts/robotocondensedlight.woff2") format("woff2"),
-    url("../fonts/robotocondensedlight.woff") format("woff");
+    url("./../fonts/robotocondensedlight.woff2") format("woff2"),
+    url("./../fonts/robotocondensedlight.woff") format("woff");
 }
 
 @font-face {
@@ -34,8 +34,8 @@
   font-style: normal;
   font-display: swap;
   src: local("Bebas Neue"),
-    url("../fonts/bebasneueregular.woff2") format("woff2"),
-    url("../fonts/bebasneueregular.woff") format("woff");
+    url("./../fonts/bebasneueregular.woff2") format("woff2"),
+    url("./../fonts/bebasneueregular.woff") format("woff");
 }
 
 @font-face {
@@ -44,6 +44,6 @@
   font-style: normal;
   font-display: swap;
   src: local("Bebas Neue"),
-    url("../fonts/bebasneuebold.woff2") format("woff2"),
-    url("../fonts/bebasneuebold.woff") format("woff");
+    url("./../fonts/bebasneuebold.woff2") format("woff2"),
+    url("./../fonts/bebasneuebold.woff") format("woff");
 }
